@@ -21,4 +21,7 @@ This list describes **general** requirements of sudoku solving. Requirements spe
 
 ### 1.1.2 Analytical Solving Requirements
 
+- *The analytical solution must be able to provide a technique for at least most human techniques.* This will allow hints to be useful for human players looking to develop their abilities in sudoku by showing them precisely where particular techniques can be used. This allows the hints to properly fulfil their purpose as an assisted learning tool for the player.
+- *The analytical solution must carry out full workings in a timely manner.* Sudoku solvers can be very fast, but we must account for the fact that our system will additionally be returning hints and using extensive human-like technique. To account for this, a reasonable time requirement is 20ms. This is excessive for a program simply concerned with the solution of the sudoku, but not for one with additional features such as hints.
+
 ### 1.1.3 Bruteforce Solving Requirements
