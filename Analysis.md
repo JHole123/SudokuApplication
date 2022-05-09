@@ -19,23 +19,24 @@ The solving of a sudoku is a relatively trivial problem, especially with brutefo
 
 This list describes **general** requirements of sudoku solving. Requirements specific to analytical or bruteforce implementation are not listed here, rather just the requirements of their inputs and outputs.
 
+- **Required** *The bruteforce solution must provide a completely solved puzzle, given the puzzle is solvable.* The bruteforce solution can not provide a reasonable chain of linear moves, and as such it must provide a complete solution rather than a step-by-step. The bruteforce solution is preferred for cases of simply solving the solution without any regard for providing hints or being human-intelligible.
 - **Required** *The analytical solution must be able to return a single-tile, validated move.* The analytical solution, unlike the bruteforce one, can provide a linear solution to the problem. This must be utilised to provide a uniquely analytical function of only solving one more tile. Solving only one tile is crucial to the provision of hints to stuck human players.
 - **Recommended** *The single-tile move analytical solution must provide a reason.* The solution needs to provide a reason for why it has picked that number for that tile. This reason will be used to supply hints to the player. The reason does not necessarily need to be human-understandable (i.e. it may use an ID system). The reason must provide the tiles which led it to the conclusion, for developer-specific implementation of graphical display for hints.
-- **Required** *The bruteforce solution must provide a completely solved puzzle, given the puzzle is solvable.* The bruteforce solution can not provide a reasonable chain of linear moves, and as such it must provide a complete solution rather than a step-by-step. The bruteforce solution is preferred for cases of simply solving the solution without any regard for providing hints or being human-intelligible.
 
 #### 2.1.1.1 Analytical Solving Requirements
 
 *Requirements that are to do with the working of the analytical solution, i.e. logically driven solving.*
 
-- **Recommended** *The analytical solution must be able to provide a technique for at least most human techniques.* This will allow hints to be useful for human players looking to develop their abilities in sudoku by showing them precisely where particular techniques can be used. This allows the hints to properly fulfil their purpose as an assisted learning tool for the player. Specifically, "most" is defined as 90% in terms of frequency.
 - **Required** *The analytical solution must carry out full workings in a timely manner.* Sudoku solvers can be very fast, but we must account for the fact that our system will additionally be returning hints and using extensive human-like technique. To account for this, a reasonable time requirement is 500ms. This is excessive for a program simply concerned with the solution of the sudoku, but not for one with additional features such as hints and GUI.
+- **Recommended** *The analytical solution must be able to provide a technique for at least most human techniques.* This will allow hints to be useful for human players looking to develop their abilities in sudoku by showing them precisely where particular techniques can be used. This allows the hints to properly fulfil their purpose as an assisted learning tool for the player. Specifically, "most" is defined as 90% in terms of frequency.
 
 #### 2.1.1.2 Bruteforce Solving Requirements
 *Requirements that are to do with the working of the bruteforce solution, i.e. computationally driven solving.*
 
+- **Required** *Must throw an error if multiple valid solutions are found.* Since the bruteforce solving will be used in the sudoku generation part of the library, it must be fit for that purpose. Multiple solutions from the same puzzle constitutes an invalid puzzle and must be rejected, as that means the player may solve a sudoku correctly but will be told they are wrong as it does not fit the solution given by the computer or the computer will not know which solution to try to apply to the player.
 - **Recommended** *The bruteforce solution must use heuristics for optimisation.* This includes techniques such as using small analytical methods for pruning, and ordering of branches in a computationally reductive manner - for example, trying squares that have the least possibilities first will reduce the overall number of computations the bruteforce solver must complete. 
 - **Recommended** *The bruteforce solution must use memory stores for optimisation.* Usage of caches and various memory stores of things already computed is very effective in bruteforce solutions to reduce the number of computations that need to be done by simply not repeating any. This method is generally slightly more memory intensive, however this is not an issue on any modern computer where the additional memory usage is in a few megabytes (a trivial amount), and instead saves on the bottlenecking factor in sudoku solving, which is processing.
-- **Required** *Must throw an error if multiple valid solutions are found.* Since the bruteforce solving will be used in the sudoku generation part of the library, it must be fit for that purpose. Multiple solutions from the same puzzle constitutes an invalid puzzle and must be rejected, as that means the player may solve a sudoku correctly but will be told they are wrong as it does not fit the solution given by the computer or the computer will not know which solution to try to apply to the player.
+
 
 ### 2.1.2 Analytical Solution
 
@@ -64,8 +65,13 @@ The generation of a new sudoku puzzle for a user to solve is significantly more 
 - **Required** *The generation will save patterns to generate sudokus.* These patterns can be made to use up to 36 puzzles each, so even a small store of around 100 unique patterns will allow 3600 functionally unique puzzles, significantly reducing the chance that a player will have a puzzle repeat. Keeping the patterns stored will mean that a player will also not have to wait several seconds for a puzzle to be generated.
 - **Recommended** *The generation will have variance for difficulties.* This means that puzzles that are intended to have a lower difficulty will have more numbers filled in initially. This allows the user to decide what level of difficulty they wish to have on their sudoku, allowing it to fulfil the needs of both people with less experience in sudoku and those with more experience. Having varying difficulties means that the saved patterns will have to be marked with their respective difficulty when they are saved.
 
-# 3 Graphical Interface
+# 3 Graphical User Interface
 
 The graphical interface is not something in which analysis is particularly necessary. However, in spirit of being compendious, specific UI principles will be expounded upon. It is important to note that, due to the nature of UI to be optional, most of these listed requirements are more optional and not essential to the running of the program.
 
+## 3.1 GUI Requirements
 
+- **Required** *The grid can take manual input of values*. This means that a user can manually select a tile and enter a value in it.
+- **Required** *The grid can take mass input of values.* This means that the grid can accept files containing the values to populate the sudoku grid with. Each line will represent a new row, and 9 values will be on each line.
+- **Recommended** *Allow drag-and-drop of files into the sudoku grid.* This means that being able to drag and drop an appropriate file should automatically fill in the grid with the respective values from the file.
+- **Recommended** *Modern looking UI design layout.* A design that looks like it is obscure, from 1998, is likely to drive away less technologically confident users.
