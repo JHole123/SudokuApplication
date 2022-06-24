@@ -80,7 +80,7 @@ The generation of a new sudoku puzzle for a user to solve is significantly more 
 
 # 3 Graphical User Interface
 
-The graphical interface is not something in which analysis is particularly necessary. However, in spirit of being compendious, specific UI principles will be expounded upon. It is important to note that, due to the nature of UI to be optional, most of these listed requirements are more optional and not essential to the running of the program.
+The graphical interface is not something in which analysis is particularly necessary. However, in spirit of being compendious, specific UI principles will be expounded upon. It is important to note that, due to the nature of UI to be optional beyond the bare basics, most of these listed requirements are more optional and not essential to the running of the program.
 
 ## 3.1 GUI Requirements
 
