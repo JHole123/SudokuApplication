@@ -7,7 +7,7 @@
 
 ## 1.1 Notation
 
-Segment refers to any section within a sudoku grid which can only contain some *n* (1..9) once. These are rows, columns, or the 3x3 grids. The rows and columns will be referred to as segments of type "linear" (referring to their commonality with lines), and the 3x3 grids as type "block".
+Segment refers to any section within a sudoku grid which can only contain some *n* (1..9) once. These are rows, columns, or the 3x3 grids. The rows and columns will be referred to as segments of type "linear" (referring to their commonality with lines), and the 3x3 grids as type "block". The "candidates" of a given tile refer to the numbers that it could potentially be, given you check the numbers of every segment that tile is in (two linear segments and a block segment).
 
 ## 1.2 Research
 
@@ -19,7 +19,7 @@ This program is made for both people beginning sudoku, and those that play it re
 
 ## 1.4 Context
 
-In order to solve a sudoku, you have two primary schools of method in order to do this. In this project, these will be classified as "analytical" and "bruteforce". Analytical solving is essentially just doing what humans do; it is slightly adapted to be computationally effective, but otherwise, it is essentially a computer analysing the patterns of numbers to bring about a solution. Bruteforce, on the other hand, departs from a method that is human-intelligible. It leverages the massive computational power available, and instead attempts every possible combination of numbers for a board. This may sound unfeasible, as there are 81 squares which can have 9 different digits each, meaning there at 9^81 different combinations (a very large number). However, the numbers specified at the beginning significantly constrict the problem. So too, do the numbers that you try as you attempt to "guess" each combination, meaning it is often even faster than analytical solving if you optimise it well.
+There are two major schools of thought to solve a sudoku: in this project, these will be classified as "analytical" and "bruteforce". Analytical solving is essentially just doing what humans do; it is slightly adapted to be computationally effective, but otherwise, it is essentially a computer analysing the patterns of numbers to bring about a solution. Bruteforce, on the other hand, departs from a method that is human-intelligible. It leverages the massive computational power available, and instead attempts every possible combination of numbers for a board. This may sound unfeasible, as there are 81 squares which can have 9 different digits each, meaning there at 9^81 different combinations (a very large number). However, the numbers specified at the beginning significantly constrict the problem. So too, do the numbers that you try as you attempt to "guess" each combination, meaning it is often even faster than analytical solving if you optimise it well.
 
 # 2 Sudoku Library
 
@@ -62,14 +62,14 @@ There are a variety of different sudoku techniques employed by humans to analyti
 *This subsubsection discusses the analysis of single candidates within a puzzle.*
 
 1. *Simple Checking* By keeping a store of the numbers that *could* go in any square (candidate values), and simply filling in a number when there is only one number that could go in a particular square, we can entirely solve easier sudoku puzzles. It is also the foundation of all the analytical methods, and the bruteforce solution will employ this component of the analytical solution for validation.
-2. *Cross-Hatch Scanning* Given some segment *k*, if some number *n* only appears across all squares within *k* once, then in whichever square that *n* appears, it must be *n*. If there is only one square which is valid for *n*, that square must contain *n*.
-3. *Generalised Method Rule* For some intersection of *A* and *B*, *Q*, if some *n* is not possible within either of *A* or *B*, then it necessarily implies that *n* is contained within *Q*, given that *Q* contains a possibility for *n*. This is because a particular segment *must* contain *n* - so if *A* does not contain *n* outside of *Q*, it must be contained within *Q*. 
+2. *Cross-Hatch Scanning* Given some segment *k*, if some candidate *n* only appears across all squares within *k* once, then in whichever square that *n* appears, it must be *n*. If there is only one square which is valid for *n*, that square must contain *n*.
+3. *Generalised Method Rule* For some intersection of segments *A* ∩ *B*, denoted *Q*, if some candidate *n* is not possible within (*A* ∪ *B*) ∩ ¬*Q*, then it necessarily implies that *n* is contained within *Q*, given that *Q* contains a possibility for *n*. This is because a particular segment *must* contain *n* - so if *A* does not contain *n* outside of *Q*, it must be contained within *Q*. The logic can be reduced to not include *Q*; (*A* ∪ *B*) ∩ ¬*Q* simplifies to *A* ⊕ *B*.
 
 #### 2.1.2.2 Doubles Analysis
 
 *This subsubsection discusses the analysis of double candidates within a puzzle.*
 
-1. *Segment Range Checking* Given some segment *k* of type block and overlapping segment *l* of type linear, if some *n* appears only within the intersection of *k* and *l*, *Q*, and nowhere else within *k*, then it can also not be contained within the *l* that is not *Q*. This is similar to the process of the *Generalised Method Rule* - that is to say, *k* must contain *n*, so *n* cannot be present in *¬Q^l*. This rule is applicable with reversed types: when *k* is of type linear and *l* is of type block.  
+1. *Segment Range Checking* Given some block segment *A* and intersecting linear segment *B*, if some candidate *n* appears only within *A* ∩ *B*, denoted *Q*, and nowhere else within *A*, then it can also not be contained within *B* ∩ ¬*Q*. This is similar to the process of the *Generalised Method Rule* - that is to say, *A* must contain *n*, so *n* cannot be present in *B* ∩ ¬*Q*. This rule is applicable with reversed types: when *A* is a linear segment and *B* is a block segment.
 
 ## 2.2 Sudoku Generation
 
@@ -85,6 +85,6 @@ The graphical interface is not something in which analysis is particularly neces
 ## 3.1 GUI Requirements
 
 1. **Required** *The grid can take manual input of values*. This means that a user can manually select a tile and enter a value in it.
-2. **Required** *The grid can take mass input of values.* This means that the grid can accept files containing the values to populate the sudoku grid with. Each line will represent a new row, and 9 values will be on each line.
+2. **Required** *The grid can take mass input of values.* This means that the grid can accept files containing the values to populate the sudoku grid. Each line will represent a new row, and 9 values will be on each line.
 3. **Recommended** *Allow drag-and-drop of files into the sudoku grid.* This means that being able to drag and drop an appropriate file should automatically fill in the grid with the respective values from the file.
 4. **Recommended** *Modern looking UI design layout.* A design that looks like it is obscure, from 1998, is likely to drive away less technologically confident users.
