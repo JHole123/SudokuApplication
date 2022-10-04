@@ -9,6 +9,7 @@ namespace SudokuApplication;
 public class Board 
 {
     public List<Tile> Tiles { get; set; }
+    public List<Segment> Segments { get; set; }
     public Tile this[int n]
     {
         get { return Tiles[n]; }
