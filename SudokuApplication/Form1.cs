@@ -47,18 +47,19 @@ namespace SudokuApplication
             for (int i = 0; i < 81; i++)
             {
                 int[] candidates = MainBoard.Tiles[i].GetCandidates(ref MainBoard);
-                for (int j = 0; j < 9; j++)
+                // this was a lot harder to do than it should have been, never forget 
+                for (int j = 1; j < 10; j++) // i'm so sorry
                 {
-                    if (candidates.Contains(j + 1))
+                    if (candidates.Contains(j))
                     {
-                        if (j == 8) result += $"{candidates[j]}";
-                        else if (j % 3 == 0) result += $"{candidates[j]}\n";
-                        else result += $"{candidates[j]} ";
+                        if (j == 9) result += $"{j}";
+                        else if (j % 3 == 0) result += $"{j}\r\n";
+                        else result += $"{j} ";
                     }
                     else
                     {
-                        if (j == 8) result += $" ";
-                        else if (j % 3 == 2) result += $" \n";
+                        if (j == 9) result += $" ";
+                        else if (j % 3 == 0) result += $" \r\n";
                         else result += $"  ";
                     }
                 }
