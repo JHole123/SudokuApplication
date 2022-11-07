@@ -1,5 +1,5 @@
-﻿namespace SudokuApplication
-{
+﻿namespace SudokuApplication;
+
     partial class SudokuForm
     {
         /// <summary>
@@ -116,7 +116,7 @@
             // Tile11
             // 
             this.Tile11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile11.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile11.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile11.Location = new System.Drawing.Point(191, 67);
             this.Tile11.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile11.Multiline = true;
@@ -130,7 +130,7 @@
             // Tile12
             // 
             this.Tile12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile12.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile12.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile12.Location = new System.Drawing.Point(230, 67);
             this.Tile12.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile12.Multiline = true;
@@ -144,7 +144,7 @@
             // Tile21
             // 
             this.Tile21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile21.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile21.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile21.Location = new System.Drawing.Point(191, 106);
             this.Tile21.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile21.Multiline = true;
@@ -158,7 +158,7 @@
             // Tile22
             // 
             this.Tile22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile22.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile22.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile22.Location = new System.Drawing.Point(230, 106);
             this.Tile22.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile22.Multiline = true;
@@ -172,7 +172,7 @@
             // Tile13
             // 
             this.Tile13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile13.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile13.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile13.Location = new System.Drawing.Point(269, 67);
             this.Tile13.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile13.Multiline = true;
@@ -186,7 +186,7 @@
             // Tile23
             // 
             this.Tile23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile23.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile23.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile23.Location = new System.Drawing.Point(269, 106);
             this.Tile23.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile23.Multiline = true;
@@ -200,7 +200,7 @@
             // Tile33
             // 
             this.Tile33.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile33.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile33.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile33.Location = new System.Drawing.Point(269, 145);
             this.Tile33.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile33.Multiline = true;
@@ -214,7 +214,7 @@
             // Tile32
             // 
             this.Tile32.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile32.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile32.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile32.Location = new System.Drawing.Point(230, 145);
             this.Tile32.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile32.Multiline = true;
@@ -228,7 +228,7 @@
             // Tile31
             // 
             this.Tile31.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile31.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile31.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile31.Location = new System.Drawing.Point(191, 145);
             this.Tile31.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile31.Multiline = true;
@@ -242,7 +242,7 @@
             // Tile36
             // 
             this.Tile36.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile36.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile36.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile36.Location = new System.Drawing.Point(396, 145);
             this.Tile36.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile36.Multiline = true;
@@ -256,7 +256,7 @@
             // Tile35
             // 
             this.Tile35.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile35.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile35.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile35.Location = new System.Drawing.Point(357, 145);
             this.Tile35.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile35.Multiline = true;
@@ -266,11 +266,14 @@
             this.Tile35.TabStop = false;
             this.Tile35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Tile35.WordWrap = false;
+            this.Tile35.Click += new System.EventHandler(this.TileClicked);
+            this.Tile35.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TilePressed);
+            this.Tile35.MouseCaptureChanged += new System.EventHandler(this.TileUnclicked);
             // 
             // Tile34
             // 
             this.Tile34.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile34.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile34.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile34.Location = new System.Drawing.Point(318, 145);
             this.Tile34.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile34.Multiline = true;
@@ -284,7 +287,7 @@
             // Tile26
             // 
             this.Tile26.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile26.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile26.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile26.Location = new System.Drawing.Point(396, 106);
             this.Tile26.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile26.Multiline = true;
@@ -298,7 +301,7 @@
             // Tile16
             // 
             this.Tile16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile16.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile16.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile16.Location = new System.Drawing.Point(396, 67);
             this.Tile16.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile16.Multiline = true;
@@ -312,7 +315,7 @@
             // Tile25
             // 
             this.Tile25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile25.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile25.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile25.Location = new System.Drawing.Point(357, 106);
             this.Tile25.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile25.Multiline = true;
@@ -326,7 +329,7 @@
             // Tile24
             // 
             this.Tile24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile24.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile24.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile24.Location = new System.Drawing.Point(318, 106);
             this.Tile24.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile24.Multiline = true;
@@ -340,7 +343,7 @@
             // Tile15
             // 
             this.Tile15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile15.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile15.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile15.Location = new System.Drawing.Point(357, 67);
             this.Tile15.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile15.Multiline = true;
@@ -354,7 +357,7 @@
             // Tile14
             // 
             this.Tile14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile14.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile14.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile14.Location = new System.Drawing.Point(318, 67);
             this.Tile14.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile14.Multiline = true;
@@ -368,7 +371,7 @@
             // Tile39
             // 
             this.Tile39.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile39.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile39.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile39.Location = new System.Drawing.Point(523, 145);
             this.Tile39.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile39.Multiline = true;
@@ -382,7 +385,7 @@
             // Tile38
             // 
             this.Tile38.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile38.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile38.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile38.Location = new System.Drawing.Point(484, 145);
             this.Tile38.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile38.Multiline = true;
@@ -396,7 +399,7 @@
             // Tile37
             // 
             this.Tile37.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile37.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile37.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile37.Location = new System.Drawing.Point(445, 145);
             this.Tile37.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile37.Multiline = true;
@@ -410,7 +413,7 @@
             // Tile29
             // 
             this.Tile29.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile29.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile29.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile29.Location = new System.Drawing.Point(523, 106);
             this.Tile29.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile29.Multiline = true;
@@ -424,7 +427,7 @@
             // Tile19
             // 
             this.Tile19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile19.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile19.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile19.Location = new System.Drawing.Point(523, 67);
             this.Tile19.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile19.Multiline = true;
@@ -438,7 +441,7 @@
             // Tile28
             // 
             this.Tile28.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile28.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile28.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile28.Location = new System.Drawing.Point(484, 106);
             this.Tile28.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile28.Multiline = true;
@@ -452,7 +455,7 @@
             // Tile27
             // 
             this.Tile27.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile27.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile27.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile27.Location = new System.Drawing.Point(445, 106);
             this.Tile27.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile27.Multiline = true;
@@ -466,7 +469,7 @@
             // Tile18
             // 
             this.Tile18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile18.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile18.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile18.Location = new System.Drawing.Point(484, 67);
             this.Tile18.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile18.Multiline = true;
@@ -480,7 +483,7 @@
             // Tile17
             // 
             this.Tile17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile17.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile17.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile17.Location = new System.Drawing.Point(445, 67);
             this.Tile17.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile17.Multiline = true;
@@ -494,7 +497,7 @@
             // Tile63
             // 
             this.Tile63.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile63.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile63.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile63.Location = new System.Drawing.Point(269, 273);
             this.Tile63.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile63.Multiline = true;
@@ -508,7 +511,7 @@
             // Tile62
             // 
             this.Tile62.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile62.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile62.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile62.Location = new System.Drawing.Point(230, 273);
             this.Tile62.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile62.Multiline = true;
@@ -522,7 +525,7 @@
             // Tile61
             // 
             this.Tile61.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile61.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile61.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile61.Location = new System.Drawing.Point(191, 273);
             this.Tile61.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile61.Multiline = true;
@@ -536,7 +539,7 @@
             // Tile53
             // 
             this.Tile53.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile53.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile53.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile53.Location = new System.Drawing.Point(269, 234);
             this.Tile53.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile53.Multiline = true;
@@ -550,7 +553,7 @@
             // Tile43
             // 
             this.Tile43.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile43.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile43.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile43.Location = new System.Drawing.Point(269, 195);
             this.Tile43.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile43.Multiline = true;
@@ -564,7 +567,7 @@
             // Tile52
             // 
             this.Tile52.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile52.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile52.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile52.Location = new System.Drawing.Point(230, 234);
             this.Tile52.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile52.Multiline = true;
@@ -578,7 +581,7 @@
             // Tile51
             // 
             this.Tile51.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile51.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile51.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile51.Location = new System.Drawing.Point(191, 234);
             this.Tile51.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile51.Multiline = true;
@@ -592,7 +595,7 @@
             // Tile42
             // 
             this.Tile42.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile42.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile42.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile42.Location = new System.Drawing.Point(230, 195);
             this.Tile42.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile42.Multiline = true;
@@ -606,7 +609,7 @@
             // Tile41
             // 
             this.Tile41.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile41.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile41.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile41.Location = new System.Drawing.Point(191, 195);
             this.Tile41.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile41.Multiline = true;
@@ -620,7 +623,7 @@
             // Tile66
             // 
             this.Tile66.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile66.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile66.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile66.Location = new System.Drawing.Point(396, 273);
             this.Tile66.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile66.Multiline = true;
@@ -634,7 +637,7 @@
             // Tile65
             // 
             this.Tile65.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile65.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile65.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile65.Location = new System.Drawing.Point(357, 273);
             this.Tile65.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile65.Multiline = true;
@@ -648,7 +651,7 @@
             // Tile64
             // 
             this.Tile64.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile64.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile64.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile64.Location = new System.Drawing.Point(318, 273);
             this.Tile64.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile64.Multiline = true;
@@ -662,7 +665,7 @@
             // Tile56
             // 
             this.Tile56.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile56.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile56.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile56.Location = new System.Drawing.Point(396, 234);
             this.Tile56.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile56.Multiline = true;
@@ -676,7 +679,7 @@
             // Tile46
             // 
             this.Tile46.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile46.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile46.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile46.Location = new System.Drawing.Point(396, 195);
             this.Tile46.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile46.Multiline = true;
@@ -690,7 +693,7 @@
             // Tile55
             // 
             this.Tile55.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile55.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile55.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile55.Location = new System.Drawing.Point(357, 234);
             this.Tile55.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile55.Multiline = true;
@@ -704,7 +707,7 @@
             // Tile54
             // 
             this.Tile54.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile54.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile54.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile54.Location = new System.Drawing.Point(318, 234);
             this.Tile54.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile54.Multiline = true;
@@ -718,7 +721,7 @@
             // Tile45
             // 
             this.Tile45.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile45.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile45.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile45.Location = new System.Drawing.Point(357, 195);
             this.Tile45.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile45.Multiline = true;
@@ -732,7 +735,7 @@
             // Tile44
             // 
             this.Tile44.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile44.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile44.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile44.Location = new System.Drawing.Point(318, 195);
             this.Tile44.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile44.Multiline = true;
@@ -746,7 +749,7 @@
             // Tile69
             // 
             this.Tile69.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile69.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile69.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile69.Location = new System.Drawing.Point(523, 273);
             this.Tile69.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile69.Multiline = true;
@@ -760,7 +763,7 @@
             // Tile68
             // 
             this.Tile68.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile68.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile68.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile68.Location = new System.Drawing.Point(484, 273);
             this.Tile68.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile68.Multiline = true;
@@ -774,7 +777,7 @@
             // Tile67
             // 
             this.Tile67.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile67.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile67.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile67.Location = new System.Drawing.Point(445, 273);
             this.Tile67.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile67.Multiline = true;
@@ -788,7 +791,7 @@
             // Tile59
             // 
             this.Tile59.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile59.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile59.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile59.Location = new System.Drawing.Point(523, 234);
             this.Tile59.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile59.Multiline = true;
@@ -802,7 +805,7 @@
             // Tile49
             // 
             this.Tile49.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile49.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile49.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile49.Location = new System.Drawing.Point(523, 195);
             this.Tile49.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile49.Multiline = true;
@@ -816,7 +819,7 @@
             // Tile58
             // 
             this.Tile58.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile58.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile58.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile58.Location = new System.Drawing.Point(484, 234);
             this.Tile58.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile58.Multiline = true;
@@ -830,7 +833,7 @@
             // Tile57
             // 
             this.Tile57.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile57.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile57.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile57.Location = new System.Drawing.Point(445, 234);
             this.Tile57.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile57.Multiline = true;
@@ -844,7 +847,7 @@
             // Tile48
             // 
             this.Tile48.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile48.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile48.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile48.Location = new System.Drawing.Point(484, 195);
             this.Tile48.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile48.Multiline = true;
@@ -858,7 +861,7 @@
             // Tile47
             // 
             this.Tile47.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile47.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile47.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile47.Location = new System.Drawing.Point(445, 195);
             this.Tile47.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile47.Multiline = true;
@@ -872,7 +875,7 @@
             // Tile93
             // 
             this.Tile93.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile93.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile93.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile93.Location = new System.Drawing.Point(269, 399);
             this.Tile93.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile93.Multiline = true;
@@ -886,7 +889,7 @@
             // Tile92
             // 
             this.Tile92.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile92.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile92.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile92.Location = new System.Drawing.Point(230, 399);
             this.Tile92.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile92.Multiline = true;
@@ -900,7 +903,7 @@
             // Tile91
             // 
             this.Tile91.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile91.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile91.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile91.Location = new System.Drawing.Point(191, 399);
             this.Tile91.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile91.Multiline = true;
@@ -914,7 +917,7 @@
             // Tile83
             // 
             this.Tile83.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile83.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile83.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile83.Location = new System.Drawing.Point(269, 360);
             this.Tile83.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile83.Multiline = true;
@@ -928,7 +931,7 @@
             // Tile73
             // 
             this.Tile73.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile73.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile73.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile73.Location = new System.Drawing.Point(269, 321);
             this.Tile73.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile73.Multiline = true;
@@ -942,7 +945,7 @@
             // Tile82
             // 
             this.Tile82.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile82.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile82.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile82.Location = new System.Drawing.Point(230, 360);
             this.Tile82.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile82.Multiline = true;
@@ -956,7 +959,7 @@
             // Tile81
             // 
             this.Tile81.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile81.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile81.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile81.Location = new System.Drawing.Point(191, 360);
             this.Tile81.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile81.Multiline = true;
@@ -970,7 +973,7 @@
             // Tile72
             // 
             this.Tile72.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile72.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile72.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile72.Location = new System.Drawing.Point(230, 321);
             this.Tile72.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile72.Multiline = true;
@@ -984,7 +987,7 @@
             // Tile71
             // 
             this.Tile71.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile71.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile71.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile71.Location = new System.Drawing.Point(191, 321);
             this.Tile71.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile71.Multiline = true;
@@ -998,7 +1001,7 @@
             // Tile96
             // 
             this.Tile96.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile96.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile96.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile96.Location = new System.Drawing.Point(396, 399);
             this.Tile96.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile96.Multiline = true;
@@ -1012,7 +1015,7 @@
             // Tile95
             // 
             this.Tile95.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile95.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile95.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile95.Location = new System.Drawing.Point(357, 399);
             this.Tile95.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile95.Multiline = true;
@@ -1026,7 +1029,7 @@
             // Tile94
             // 
             this.Tile94.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile94.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile94.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile94.Location = new System.Drawing.Point(318, 399);
             this.Tile94.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile94.Multiline = true;
@@ -1040,7 +1043,7 @@
             // Tile86
             // 
             this.Tile86.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile86.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile86.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile86.Location = new System.Drawing.Point(396, 360);
             this.Tile86.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile86.Multiline = true;
@@ -1054,7 +1057,7 @@
             // Tile76
             // 
             this.Tile76.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile76.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile76.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile76.Location = new System.Drawing.Point(396, 321);
             this.Tile76.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile76.Multiline = true;
@@ -1068,7 +1071,7 @@
             // Tile85
             // 
             this.Tile85.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile85.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile85.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile85.Location = new System.Drawing.Point(357, 360);
             this.Tile85.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile85.Multiline = true;
@@ -1082,7 +1085,7 @@
             // Tile84
             // 
             this.Tile84.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile84.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile84.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile84.Location = new System.Drawing.Point(318, 360);
             this.Tile84.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile84.Multiline = true;
@@ -1096,7 +1099,7 @@
             // Tile75
             // 
             this.Tile75.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile75.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile75.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile75.Location = new System.Drawing.Point(357, 321);
             this.Tile75.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile75.Multiline = true;
@@ -1110,7 +1113,7 @@
             // Tile74
             // 
             this.Tile74.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile74.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile74.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile74.Location = new System.Drawing.Point(318, 321);
             this.Tile74.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile74.Multiline = true;
@@ -1124,7 +1127,7 @@
             // Tile99
             // 
             this.Tile99.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile99.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile99.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile99.Location = new System.Drawing.Point(523, 399);
             this.Tile99.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile99.Multiline = true;
@@ -1138,7 +1141,7 @@
             // Tile98
             // 
             this.Tile98.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile98.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile98.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile98.Location = new System.Drawing.Point(484, 399);
             this.Tile98.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile98.Multiline = true;
@@ -1152,7 +1155,7 @@
             // Tile97
             // 
             this.Tile97.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile97.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile97.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile97.Location = new System.Drawing.Point(445, 399);
             this.Tile97.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile97.Multiline = true;
@@ -1166,7 +1169,7 @@
             // Tile89
             // 
             this.Tile89.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile89.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile89.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile89.Location = new System.Drawing.Point(523, 321);
             this.Tile89.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile89.Multiline = true;
@@ -1180,7 +1183,7 @@
             // Tile79
             // 
             this.Tile79.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile79.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile79.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile79.Location = new System.Drawing.Point(523, 360);
             this.Tile79.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile79.Multiline = true;
@@ -1194,7 +1197,7 @@
             // Tile88
             // 
             this.Tile88.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile88.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile88.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile88.Location = new System.Drawing.Point(484, 360);
             this.Tile88.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile88.Multiline = true;
@@ -1208,7 +1211,7 @@
             // Tile87
             // 
             this.Tile87.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile87.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile87.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile87.Location = new System.Drawing.Point(445, 360);
             this.Tile87.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile87.Multiline = true;
@@ -1222,7 +1225,7 @@
             // Tile78
             // 
             this.Tile78.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile78.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile78.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile78.Location = new System.Drawing.Point(484, 321);
             this.Tile78.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile78.Multiline = true;
@@ -1236,7 +1239,7 @@
             // Tile77
             // 
             this.Tile77.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Tile77.Font = new System.Drawing.Font("Century", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tile77.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tile77.Location = new System.Drawing.Point(445, 321);
             this.Tile77.MaximumSize = new System.Drawing.Size(50, 50);
             this.Tile77.Multiline = true;
@@ -1251,12 +1254,12 @@
             // 
             this.DragDropEntryLabel.AllowDrop = true;
             this.DragDropEntryLabel.AutoSize = true;
-            this.DragDropEntryLabel.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DragDropEntryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DragDropEntryLabel.Location = new System.Drawing.Point(631, 70);
             this.DragDropEntryLabel.MaximumSize = new System.Drawing.Size(550, 518);
             this.DragDropEntryLabel.Name = "DragDropEntryLabel";
             this.DragDropEntryLabel.Padding = new System.Windows.Forms.Padding(15);
-            this.DragDropEntryLabel.Size = new System.Drawing.Size(548, 55);
+            this.DragDropEntryLabel.Size = new System.Drawing.Size(523, 55);
             this.DragDropEntryLabel.TabIndex = 81;
             this.DragDropEntryLabel.Text = "Drag and drop a *.txt file with your board here";
             this.DragDropEntryLabel.DragDrop += new System.Windows.Forms.DragEventHandler(this.BoardDragDrop);
@@ -1265,10 +1268,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(380, 510);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 25);
+            this.label1.Size = new System.Drawing.Size(290, 25);
             this.label1.TabIndex = 82;
             this.label1.Text = "graphic design is my passion";
             // 
@@ -1453,4 +1456,3 @@
         private Label DragDropEntryLabel;
         private Label label1;
     }
-}

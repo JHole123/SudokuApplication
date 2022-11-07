@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SudokuEngine\SudokuEngine.csproj" />
+  </ItemGroup>
+
 </Project>

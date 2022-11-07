@@ -1,4 +1,4 @@
-﻿namespace SudokuApplication;
+﻿namespace SudokuEngine;
 
 public class Segment
 {

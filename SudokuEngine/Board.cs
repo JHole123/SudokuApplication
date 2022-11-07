@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace SudokuEngine;
 
-namespace SudokuApplication;
-
-public class Board 
+public class Board
 {
     public List<Tile> Tiles = new();
     public List<Segment> Segments = new();
@@ -16,4 +10,3 @@ public class Board
         set { Tiles[n] = value; }
     }
 }
-
