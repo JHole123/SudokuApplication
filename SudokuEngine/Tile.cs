@@ -8,6 +8,7 @@ public class Tile
     public Tile(int tileID)
     {
         TileID = tileID;
+        //Value = 0;
     }
     public int this[int n]
     {
