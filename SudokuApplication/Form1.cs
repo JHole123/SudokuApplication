@@ -1,4 +1,5 @@
 using SudokuEngine;
+using System.Diagnostics;
 
 namespace SudokuApplication;
 
@@ -32,6 +33,7 @@ public partial class SudokuForm : Form
             for (int j = 0; j < 81; j++)
             {
                 MainBoard.Tiles[j].Value = data[j] - 48; // why subtract 48? i have no clue but it breaks if i don't
+                                                         // because you tried to assign a char to an int and it's using ascii you dink
             }
             //for (int i = 0; i < 81; i++)
             //{
@@ -94,6 +96,15 @@ public partial class SudokuForm : Form
         }
     }
 
+    private void TilePressed(object sender, KeyPressEventArgs e)
+    {
+        // for some reason, e.Handled is the wrong way around
+        // this caused me much grief
+        var obj = (sender as TextBox)!;
+        e.Handled = !((obj.Text.Length == 0 && "123456789".Contains(e.KeyChar)) || 
+                      (obj.Text.Length == 1 && e.KeyChar == (char)Keys.Back));
+    }
+
     private void TileUnclicked(object sender, EventArgs e)
     {
         var obj = (sender as TextBox)!;
@@ -102,14 +113,5 @@ public partial class SudokuForm : Form
             obj.Font = new Font("Microsoft Sans Serif", 5.25F, FontStyle.Bold, GraphicsUnit.Point);
             GenerateGraphicalCandidates();
         }
-    }
-
-    private void TilePressed(object sender, KeyPressEventArgs e)
-    {
-        // for some reason, e.Handled is the wrong way around
-        // this caused me much grief
-        var obj = (sender as TextBox)!;
-        e.Handled = !((obj.Text.Length == 0 && "123456789".Contains(e.KeyChar)) || 
-                      (obj.Text.Length == 1 && e.KeyChar == (char)Keys.Back));
     }
 }
