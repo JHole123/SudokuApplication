@@ -20,6 +20,7 @@ public class Tile
         int x = TileID % 9;
         int y = TileID / 9;
         int z = (y / 3 * 3) + (x / 3); // do not worry about the legendary divide then multiply strat it is essential
+                                       // it rounds down to the nearest n
         return new int[] { x, y + 9, z + 18 };
     }
 

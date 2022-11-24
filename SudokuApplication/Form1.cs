@@ -53,6 +53,11 @@ public partial class SudokuForm : Form
 
     private void GenerateGraphicalCandidates()
     {
+        for (int j = 0; j < GraphicalTiles.Count; j++)
+        {
+            if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0])) MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
+            else MainBoard.Tiles[j].Value = 0;
+        }
         string result = "";
         for (int i = 0; i < 81; i++)
         {
