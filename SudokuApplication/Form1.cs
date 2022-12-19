@@ -14,14 +14,6 @@ public partial class SudokuForm : Form
             .Where(i => string.IsNullOrEmpty(i.Text))
             .OrderBy(i => i.Name)
             .ToArray());
-        for (int i = 0; i < GraphicalTiles.Count; i++)
-        {
-            MainBoard.Tiles.Add(new Tile(i));
-        }
-        for (int i = 0; i < 27; i++)
-        {
-            MainBoard.Segments.Add(new Segment());
-        }
         GenerateGraphicalCandidates();
     }
 
@@ -35,10 +27,10 @@ public partial class SudokuForm : Form
                 MainBoard.Tiles[j].Value = data[j] - 48; // why subtract 48? i have no clue but it breaks if i don't
                                                          // because you tried to assign a char to an int and it's using ascii you dink
             }
-            //for (int i = 0; i < 81; i++)
-            //{
-            //    GraphicalTiles[i].Text = data[i] == '0' ? " " : data[i].ToString(); // replace 0s with empty tiles
-            //}
+            for (int i = 0; i < 81; i++)
+            {
+                GraphicalTiles[i].Text = data[i] == '0' ? " " : data[i].ToString(); // replace 0s with empty tiles
+            }
         }
         GenerateGraphicalCandidates();
     }
@@ -53,6 +45,7 @@ public partial class SudokuForm : Form
 
     private void GenerateGraphicalCandidates()
     {
+        //MainBoard.UpdateSegmentValidValues();
         for (int j = 0; j < GraphicalTiles.Count; j++)
         {
             if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0])) MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
