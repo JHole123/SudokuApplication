@@ -11,5 +11,10 @@ namespace SudokuApplication
             ApplicationConfiguration.Initialize();
             Application.Run(new SudokuForm());
         }
+
+        static void DisplayMessage(string msg)
+        {
+            MessageBox.Show(msg); 
+        }
     }
 }

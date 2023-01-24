@@ -12,6 +12,5 @@ public class Segment
             if (ValidValues.Contains(tiles[i].Value)) ValidValues.Remove(tiles[i].Value);
         }
     }
-    // list of references to tiles within this segment
 }
 

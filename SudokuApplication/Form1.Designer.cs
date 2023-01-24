@@ -51,7 +51,7 @@ partial class SudokuForm
                 tb.Cursor = System.Windows.Forms.Cursors.Hand;
                 tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
                 tb.Size = new System.Drawing.Size(33, 33);
-                tb.Location = new System.Drawing.Point(sudokuBoardLocation.X + ((x - 1) * (sudokuTileMargin + tb.Size.Width)), sudokuBoardLocation.Y + 2 * ((y-1) * (sudokuTileMargin + tb.Size.Height))); // really don't know why a 2* works here, but it does space it out properly
+                tb.Location = new System.Drawing.Point(sudokuBoardLocation.X + ((x - 1) * (tb.Size.Width + sudokuTileMargin)), sudokuBoardLocation.Y + 2 * ((y-1) * (tb.Size.Height + sudokuTileMargin))); // really don't know why a 2* works here, but it does space it out properly
                 tb.MaximumSize = new System.Drawing.Size(50, 50);
                 tb.Multiline = true;
                 tb.Name = $"Tile{y}{x}";

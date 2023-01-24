@@ -24,8 +24,7 @@ public partial class SudokuForm : Form
         {
             for (int j = 0; j < 81; j++)
             {
-                MainBoard.Tiles[j].Value = data[j] - 48; // why subtract 48? i have no clue but it breaks if i don't
-                                                         // because you tried to assign a char to an int and it's using ascii you dink
+                MainBoard.Tiles[j].Value = int.Parse(data[j].ToString());
             }
             for (int i = 0; i < 81; i++)
             {
@@ -45,12 +44,16 @@ public partial class SudokuForm : Form
 
     private void GenerateGraphicalCandidates()
     {
-        //MainBoard.UpdateSegmentValidValues();
         for (int j = 0; j < GraphicalTiles.Count; j++)
         {
-            if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0])) MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
+            if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0])) { 
+                MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
+                MainBoard.Tiles[j].Candidates = new();
+            }
             else MainBoard.Tiles[j].Value = 0;
         }
+        MainBoard.UpdateSegmentValidValues();
+        string arg;
         string result = "";
         for (int i = 0; i < 81; i++)
         {
@@ -111,5 +114,15 @@ public partial class SudokuForm : Form
             obj.Font = new Font("Microsoft Sans Serif", 5.25F, FontStyle.Bold, GraphicsUnit.Point);
             GenerateGraphicalCandidates();
         }
+    }
+
+    private string ConcatenateList(List<int> cands)
+    {
+        string result = "";
+        foreach (int i in cands)
+        {
+            result += $"{i} ";
+        }
+        return result;
     }
 }
