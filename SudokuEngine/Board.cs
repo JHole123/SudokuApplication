@@ -27,11 +27,17 @@ public class Board
         Segment sgmnt= new();
         for (int i = 0; i < 9; i++)
         {
-            for (int j = 0; j < 9; j++) sgmnt.Tiles.Add((i * 9) + j); // Horizontal segments beginning at top
+            for (int j = 8; j>=0; j--) sgmnt.Tiles.Add((j * 9) + i); // Horizontal segments beginning at top
             Segments.Add(sgmnt);
             sgmnt = new();
 
-            for (int j = 0; j < 9; j++) sgmnt.Tiles.Add((j * 9) + i); // Vertical segments beginning at left
+            /*for (int j = 0; j < 9; j++) sgmnt.Tiles.Add((j * 9) + i); // Vertical segments beginning at left
+            Segments.Add(sgmnt);
+            sgmnt = new();*/
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 8; j >= 0; j--) sgmnt.Tiles.Add((i * 9) + j); // Vertical segments beginning at left
             Segments.Add(sgmnt);
             sgmnt = new();
         }

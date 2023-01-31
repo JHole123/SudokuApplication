@@ -60,7 +60,7 @@ public partial class SudokuForm : Form
             if (MainBoard.Tiles[i].Value != 0)
             {
                 result = MainBoard.Tiles[i].Value.ToString();
-                GraphicalTiles[i].Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+                GraphicalTiles[i].Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point);
             }
             else
             {
@@ -93,7 +93,7 @@ public partial class SudokuForm : Form
         if (obj.Text.Length > 1)
         {
             obj.Text = "";
-            obj.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            obj.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point);
         }
     }
 
@@ -111,9 +111,14 @@ public partial class SudokuForm : Form
         var obj = (sender as TextBox)!;
         if (obj.Text == "")
         {
-            obj.Font = new Font("Microsoft Sans Serif", 5.25F, FontStyle.Bold, GraphicsUnit.Point);
-            GenerateGraphicalCandidates();
+            obj.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold, GraphicsUnit.Point);
         }
+        GenerateGraphicalCandidates();
+    }
+
+    private void GenerateHint(object sender, EventArgs e)
+    {
+        new List<Label>(Controls.OfType<Label>())[0].Text = "GenerateHint run";
     }
 
     private string ConcatenateList(List<int> cands)
