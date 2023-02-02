@@ -1,0 +1,1 @@
+﻿Sole Candidate:On your board, there is at least one tile with only one candidate. This means the value of that tile must be equal to the candidate. This is the simplest form of finding a new value.

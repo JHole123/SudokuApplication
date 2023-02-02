@@ -101,21 +101,58 @@ partial class SudokuForm
         this.Controls.Add(pb);
         #endregion
 
-        #region Placing Hint Button
-        Point buttonLocation = new Point(800, 100);
+        #region Placing Hint Buttons
+        Point buttonLocation = new Point(800, 150);
         Button b = new Button();
+        b.Name = "ShowHintButton";
         b.FlatStyle = FlatStyle.Flat;
-        b.Size = new Size(300, 75);
+        b.Size = new Size(150, 75);
         b.Location = buttonLocation;
         b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-        b.Text = "Press this to get a new hint";
+        b.Text = "Show hint";
         b.Click += new EventHandler(this.GenerateHint);
+        this.Controls.Add(b);
+
+        buttonLocation = new(960, 150);
+        b = new();
+        b.Name = "HideHintButton";
+        b.FlatStyle = FlatStyle.Flat;
+        b.Size = new Size(150, 75);
+        b.Location = buttonLocation;
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Text = "Hide hint";
+        b.Click += new EventHandler(this.HideHint);
         this.Controls.Add(b);
         #endregion
 
+        #region Placing Hint Title
+        Point hintTitleLabelLocation = new Point(595, 320);
+        Label t = new Label();
+        t.Name = "HintTitleLabel";
+        t.Location = hintTitleLabelLocation;
+        t.MaximumSize = new Size(600, 0);
+        t.AutoSize = true;
+        t.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        t.Text = "Hint Title";
+        this.Controls.Add(t);
+        #endregion
+
+        #region Placing Hint Tally Label
+        Point hintTallyLabelLocation = new Point(800, 80);
+        Label c = new Label();
+        c.Name = "HintTallyLabel";
+        c.Location = hintTallyLabelLocation;
+        c.MaximumSize = new Size(600, 0);
+        c.AutoSize = true;
+        c.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        c.Text = "Hints generated: 0";
+        this.Controls.Add(c);
+        #endregion
+
         #region Placing Hint Label
-        Point hintLabelLocation = new Point(600, 350);
+        Point hintLabelLocation = new Point(600, 380);
         Label l = new Label();
+        l.Name = "HintLabel";
         l.Location = hintLabelLocation;
         l.MaximumSize = new Size(600, 0);
         l.AutoSize = true;

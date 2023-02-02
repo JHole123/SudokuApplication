@@ -7,6 +7,9 @@ public partial class SudokuForm : Form
 {
     public List<TextBox> GraphicalTiles;
     public Board MainBoard = new();
+    public int HintsGenerated = 0;
+    private HintsHandler HintsHandler = new();
+    private BoardAnalyser Analyser = new();
     public SudokuForm()
     {
         InitializeComponent();
@@ -53,7 +56,7 @@ public partial class SudokuForm : Form
             else MainBoard.Tiles[j].Value = 0;
         }
         MainBoard.UpdateSegmentValidValues();
-        string arg;
+        //string arg;
         string result = "";
         for (int i = 0; i < 81; i++)
         {
@@ -116,9 +119,20 @@ public partial class SudokuForm : Form
         GenerateGraphicalCandidates();
     }
 
+    private void HideHint(object sender, EventArgs e)
+    {
+        Controls["HintTitleLabel"].Text = "";
+        Controls["HintLabel"].Text = "";
+    }
+
     private void GenerateHint(object sender, EventArgs e)
     {
-        new List<Label>(Controls.OfType<Label>())[0].Text = "GenerateHint run";
+        var move = Analyser.GetMove(ref MainBoard);
+        HintsGenerated++;
+        Controls["HintTallyLabel"].Text = $"Hints generated: {HintsGenerated}";
+        Controls["HintTitleLabel"].Text = move!.Reason;
+        Controls["HintLabel"].Text = HintsHandler.HintsMeaning[move!.Reason];
+        Focus();
     }
 
     private string ConcatenateList(List<int> cands)

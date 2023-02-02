@@ -4,12 +4,12 @@ public class Move
 {
     public int TileID;
     public int NewValue;
-    public AnalyticalReason Reason;
+    public string Reason;
 
-    public Move(AnalyticalReason ar, int value, int tileID)
+    public Move(string reason, int value, int tileID)
     {
         TileID = tileID;
         NewValue = value;
-        Reason = ar;
+        Reason = reason;
     }
 }
