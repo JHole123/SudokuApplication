@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace SudokuEngine;
 
-public class Intersection
+public class Intersection : Segment
 {
-    public List<int> Tiles = new();
+    public Intersection(List<int> tiles)
+    {
+        Tiles = tiles;
+    }
 
 }
 

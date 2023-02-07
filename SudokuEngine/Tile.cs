@@ -34,7 +34,7 @@ public class Tile
     }
 
     // prunes candidates list for any it can, then returns the candidate list
-    public int[] GetCandidates(ref Board board)
+    public List<int> GetCandidates(ref Board board)
     {
         //board.UpdateSegmentValidValues();
         int[] segmentIDs = GetSegments();
@@ -51,6 +51,6 @@ public class Tile
         {
             Candidates.Remove(i);
         }
-        return Candidates.ToArray();
+        return Candidates;
     }
 }

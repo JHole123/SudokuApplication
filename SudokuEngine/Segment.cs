@@ -12,5 +12,36 @@ public class Segment
             if (ValidValues.Contains(tiles[i].Value)) ValidValues.Remove(tiles[i].Value);
         }
     }
+
+    public bool FindOnlyOnceCandidate(ref Board board, out int tileID)
+    {
+        tileID = -1;
+        int occurences;
+        for (int candidate = 1; candidate < 10; candidate++) {
+            occurences = 0;
+            foreach (int i in Tiles)
+            {
+                if (board[i].Candidates.Contains(candidate)) occurences++;
+            } 
+            if (occurences == 1)
+            {
+                foreach (int i in Tiles)
+                {
+                    if (board[i].Candidates.Contains(candidate)) { tileID = i; return true; }
+                }
+            }
+        }
+        return false;
+    }
+
+    //public bool FindSoleCandidate(ref Board board, out int tileID)
+    //{
+    //    tileID = -1;
+    //    foreach (int i in Tiles)
+    //    {
+    //        if (board[i].Candidates.Count == 1) { tileID = i; return true; }
+    //    }
+    //    return false;
+    //}
 }
 

@@ -49,11 +49,15 @@ public partial class SudokuForm : Form
     {
         for (int j = 0; j < GraphicalTiles.Count; j++)
         {
-            if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0])) { 
+            if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0]))
+            {
                 MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
                 MainBoard.Tiles[j].Candidates = new();
             }
-            else MainBoard.Tiles[j].Value = 0;
+            else { 
+                MainBoard.Tiles[j].Value = 0; 
+                MainBoard.Tiles[j].Candidates = new List<int> { 1,2,3,4,5,6,7,8,9 };
+            }
         }
         MainBoard.UpdateSegmentValidValues();
         //string arg;
@@ -67,7 +71,7 @@ public partial class SudokuForm : Form
             }
             else
             {
-                int[] candidates = MainBoard.Tiles[i].GetCandidates(ref MainBoard);
+                var candidates = MainBoard.Tiles[i].GetCandidates(ref MainBoard);
                 // this was a lot harder to do than it should have been, never forget 
                 for (int j = 1; j < 10; j++) // i'm so sorry
                 {
@@ -137,12 +141,12 @@ public partial class SudokuForm : Form
 
     private void SolveBoard(object sender, EventArgs e)
     {
-        // solve the board
+        new BoardBacktracker(MainBoard).SolveBoard();
     }
 
-    private void UnfocusElement(object sender, EventArgs e, Type t)
+    private void UnfocusElement(object sender, MouseEventArgs e)
     {
-        //var arg = typeof(t.GetType() );
+        ActiveControl = null;
     }
 
     private string ConcatenateList(List<int> cands)
