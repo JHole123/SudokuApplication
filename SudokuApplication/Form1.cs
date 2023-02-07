@@ -135,6 +135,16 @@ public partial class SudokuForm : Form
         Focus();
     }
 
+    private void SolveBoard(object sender, EventArgs e)
+    {
+        // solve the board
+    }
+
+    private void UnfocusElement(object sender, EventArgs e, Type t)
+    {
+        //var arg = typeof(t.GetType() );
+    }
+
     private string ConcatenateList(List<int> cands)
     {
         string result = "";

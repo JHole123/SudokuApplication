@@ -126,7 +126,7 @@ partial class SudokuForm
         #endregion
 
         #region Placing Hint Title
-        Point hintTitleLabelLocation = new Point(595, 320);
+        Point hintTitleLabelLocation = new Point(595, 250);
         Label t = new Label();
         t.Name = "HintTitleLabel";
         t.Location = hintTitleLabelLocation;
@@ -150,7 +150,7 @@ partial class SudokuForm
         #endregion
 
         #region Placing Hint Label
-        Point hintLabelLocation = new Point(600, 380);
+        Point hintLabelLocation = new Point(600, 310);
         Label l = new Label();
         l.Name = "HintLabel";
         l.Location = hintLabelLocation;
@@ -159,6 +159,20 @@ partial class SudokuForm
         l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         l.Text = "This is some example text of a hint if you do it long enough does it go off the screen or does it wrap";
         this.Controls.Add(l);
+        #endregion
+
+        #region Placing Solve Button
+        buttonLocation = new Point(50, 575);
+        b = new Button();
+        b.Name = "SolveButton";
+        b.FlatStyle = FlatStyle.Flat;
+        b.Size = new Size(150, 75);
+        b.Location = buttonLocation;
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Text = "Solve!";
+        b.Click += new EventHandler(this.SolveBoard);
+        //b.GotFocus += new EventHandler();
+        this.Controls.Add(b);
         #endregion
 
         this.ResumeLayout(false);
