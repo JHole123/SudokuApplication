@@ -41,7 +41,7 @@ public class BoardBacktracker
         return false;
     }*/
 
-    public bool SolveBoard(Board board)
+    public bool SolveBoard(ref Board board)
     {
         int trialTileId = -1;
 
@@ -55,16 +55,18 @@ public class BoardBacktracker
             }
         }
 
+        // if every tile is full return true
         if (trialTileId == -1) return true;
 
         // try each candidate
-        for (int i = 1; i < 10; i++)
+        for (int ican = 1; ican < 10; ican++)
         {
-            if (board.Tiles[trialTileId].GetCandidates(ref board).Contains(i))
+            var candidates = board.Tiles[trialTileId].GetCandidates(ref board);
+            if (candidates.Contains(ican))
             {
-                board.Tiles[trialTileId].Value = i;
+                board.Tiles[trialTileId].Value = ican;
                 // recurse to try every tile
-                if (SolveBoard(board)) return true;
+                if (SolveBoard(ref board)) return true;
                 else board.Tiles[trialTileId].Value = 0;
             }
         }

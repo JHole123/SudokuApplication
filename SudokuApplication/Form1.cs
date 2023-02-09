@@ -142,7 +142,7 @@ public partial class SudokuForm : Form
     private void SolveBoard(object sender, EventArgs e)
     {
         Debug.WriteLine("SolveBoard ran");
-        if (new BoardBacktracker(MainBoard).SolveBoard(MainBoard)) Debug.WriteLine("Board is solved");
+        if (new BoardBacktracker(MainBoard).SolveBoard(ref MainBoard)) Debug.WriteLine("Board is solved");
         Debug.WriteLine("BoardBacktracker.SolveBoard ran");
         foreach (Tile t in MainBoard.Tiles)
         {
