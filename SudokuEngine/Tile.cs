@@ -29,7 +29,7 @@ public class Tile
         int z = (y / 3 * 3) + (x / 3); // do not worry about the legendary divide then multiply strat it is essential
                                        // it rounds down to the nearest n since it is integer division (divides then rounds down)
                                        // this maths finds the "anchor point" of a 3x3 segment in the top left of the segment
-        Debug.WriteLine($"{x}:{y}:{z}");
+        //Debug.WriteLine($"{x}:{y}:{z}");
         return new int[] { x, y+9, z + 18 }; // within Segments list: horizontal segments indices [0,8]; vertical [9,17]; 3x3 [18,26] therefore offsets of 0, 9, 18
     }
 

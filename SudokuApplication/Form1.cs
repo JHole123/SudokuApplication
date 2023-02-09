@@ -141,7 +141,14 @@ public partial class SudokuForm : Form
 
     private void SolveBoard(object sender, EventArgs e)
     {
-        new BoardBacktracker(MainBoard).SolveBoard();
+        Debug.WriteLine("SolveBoard ran");
+        if (new BoardBacktracker(MainBoard).SolveBoard(MainBoard)) Debug.WriteLine("Board is solved");
+        Debug.WriteLine("BoardBacktracker.SolveBoard ran");
+        foreach (Tile t in MainBoard.Tiles)
+        {
+            Debug.WriteLine($"{t.Value} ");
+        }
+        GenerateGraphicalCandidates();
     }
 
     private void UnfocusElement(object sender, MouseEventArgs e)
