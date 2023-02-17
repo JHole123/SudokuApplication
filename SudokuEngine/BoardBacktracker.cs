@@ -1,12 +1,9 @@
-﻿namespace SudokuEngine;
+﻿using System.Diagnostics;
+
+namespace SudokuEngine;
 
 public class BoardBacktracker
 {
-    private Board MainBoard;
-    public BoardBacktracker(Board board)
-    {
-        MainBoard = board;
-    }
 
     // needs fixing
     /*public bool SolveBoard(out Board trialBoard)
@@ -43,6 +40,7 @@ public class BoardBacktracker
 
     public bool SolveBoard(ref Board board)
     {
+        Debug.WriteLine("SolveBoard invoked");
         int trialTileId = -1;
 
         // find empty tile
@@ -58,19 +56,38 @@ public class BoardBacktracker
         // if every tile is full return true
         if (trialTileId == -1) return true;
 
+        // update candidates on this board
+        board.UpdateSegmentValidValues();
+
         // try each candidate
-        for (int ican = 1; ican < 10; ican++)
+        for (int i = 1; i < 10; i++)
         {
             var candidates = board.Tiles[trialTileId].GetCandidates(ref board);
-            if (candidates.Contains(ican))
+            Debug.WriteLine($"Candidates for {trialTileId}: {ConcatenateList(candidates)}");
+            if (candidates.Contains(i))
             {
-                board.Tiles[trialTileId].Value = ican;
+                board.Tiles[trialTileId].Value = i;
+                Debug.WriteLine($"Trying {i} at {trialTileId}");
                 // recurse to try every tile
                 if (SolveBoard(ref board)) return true;
-                else board.Tiles[trialTileId].Value = 0;
+                else { board.Tiles[trialTileId].Value = 0; Debug.WriteLine("else condition reached"); }
             }
         }
         return false;
+    }
+
+    // candidates are empty for a tile even when there is a valid candidate
+    // this only seems to be a problem if the previous tile has been edited in some way
+
+    private string ConcatenateList(List<int> t)
+    {
+        if (t.Count == 0) return "{}";
+        string arg = "{";
+        foreach (int i in t)
+        {
+            arg += i.ToString()+", ";
+        }
+        return arg[0..^2] + "}";
     }
 
 }

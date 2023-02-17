@@ -38,6 +38,7 @@ partial class SudokuForm
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(1264, 681);
         this.BackColor = Color.DarkSlateGray;
+        this.Load += new EventHandler(this.FormLoad);
         this.SuspendLayout();
 
         #region Placing Sudoku Board
@@ -102,11 +103,11 @@ partial class SudokuForm
         #endregion
 
         #region Placing Hint Buttons
-        Point buttonLocation = new Point(800, 150);
+        Point buttonLocation = new Point(800, 100);
         Button b = new Button();
         b.Name = "ShowHintButton";
         b.FlatStyle = FlatStyle.Flat;
-        b.Size = new Size(150, 75);
+        b.Size = new Size(145, 60);
         b.Location = buttonLocation;
         b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         b.Text = "Show hint";
@@ -114,11 +115,11 @@ partial class SudokuForm
         b.MouseUp += new MouseEventHandler(this.UnfocusElement);
         this.Controls.Add(b);
 
-        buttonLocation = new(960, 150);
+        buttonLocation = new(950, 100);
         b = new();
         b.Name = "HideHintButton";
         b.FlatStyle = FlatStyle.Flat;
-        b.Size = new Size(150, 75);
+        b.Size = new Size(145, 60);
         b.Location = buttonLocation;
         b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         b.Text = "Hide hint";
@@ -140,7 +141,7 @@ partial class SudokuForm
         #endregion
 
         #region Placing Hint Tally Label
-        Point hintTallyLabelLocation = new Point(800, 80);
+        Point hintTallyLabelLocation = new Point(800, 50);
         Label c = new Label();
         c.Name = "HintTallyLabel";
         c.Location = hintTallyLabelLocation;
@@ -171,10 +172,45 @@ partial class SudokuForm
         b.Size = new Size(150, 75);
         b.Location = buttonLocation;
         b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-        b.Text = "Solve!";
+        b.Text = "Solve";
         b.Click += new EventHandler(this.SolveBoard);
         b.MouseUp += new MouseEventHandler(this.UnfocusElement);
         this.Controls.Add(b);
+        #endregion
+
+        #region AutoCandidate Label
+        buttonLocation = new Point(800, 190);
+        l = new();
+        l.Name = "AutoCandidateLabel";
+        l.Location = buttonLocation;
+        l.AutoSize= true;
+        l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        l.Text = "Auto Candidate Filling";
+        this.Controls.Add(l);
+        #endregion
+
+        #region AutoCandidate Toggle
+
+        buttonLocation = new Point(1040, 190);
+        ToggleSwitch ts = new();
+        ts.Name = "AutoCandidateToggle";
+        ts.Location = buttonLocation;
+        ts.Size = new(50, 25);
+        ts.Cursor = Cursors.Hand;
+        ts.Click += new EventHandler(this.ToggleAutoCandidateFilling);
+        this.Controls.Add(ts);
+
+        #endregion
+
+        #region Info Tooltip Label
+        buttonLocation = new Point(785, 170);
+        l = new();
+        l.Name = "Tooltip";
+        l.Location = buttonLocation;
+        l.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        l.Text = "i";
+        this.Controls.Add(l);
+
         #endregion
 
         this.ResumeLayout(false);

@@ -6,10 +6,11 @@ namespace SudokuApplication;
 public partial class SudokuForm : Form
 {
     public List<TextBox> GraphicalTiles;
-    public Board MainBoard = new();
+    public static Board MainBoard = new();
     public int HintsGenerated = 0;
     private HintsHandler HintsHandler = new();
     private BoardAnalyser Analyser = new();
+    private bool AutoCandidateFilling = false;
     public SudokuForm()
     {
         InitializeComponent();
@@ -18,6 +19,21 @@ public partial class SudokuForm : Form
             .OrderBy(i => i.Name)
             .ToArray());
         GenerateGraphicalCandidates();
+    }
+
+    private void FormLoad(object sender, EventArgs e)
+    {
+        ToolTip tt = new();
+        tt.AutoPopDelay = 15000;
+        tt.InitialDelay = 500;
+        tt.ReshowDelay = 1500;
+
+        tt.SetToolTip(Controls["Tooltip"], "Automatic candidate filling means the computer will automatically fill in\nwhich numbers are possible based on whether those numbers are\nin the same row, column, or 3x3 square.");
+    }
+
+    public void ToggleAutoCandidateFilling(object sender, EventArgs e)
+    {
+        AutoCandidateFilling = !AutoCandidateFilling;
     }
 
     private void BoardDragDrop(object sender, DragEventArgs e)
@@ -142,7 +158,7 @@ public partial class SudokuForm : Form
     private void SolveBoard(object sender, EventArgs e)
     {
         Debug.WriteLine("SolveBoard ran");
-        if (new BoardBacktracker(MainBoard).SolveBoard(ref MainBoard)) Debug.WriteLine("Board is solved");
+        if (new BoardBacktracker().SolveBoard(ref MainBoard)) Debug.WriteLine("Board is solved");
         Debug.WriteLine("BoardBacktracker.SolveBoard ran");
         foreach (Tile t in MainBoard.Tiles)
         {
