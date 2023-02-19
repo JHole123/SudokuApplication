@@ -203,7 +203,7 @@ partial class SudokuForm
         #endregion
 
         #region Info Tooltip Label
-        buttonLocation = new Point(785, 170);
+        buttonLocation = new Point(790, 175);
         l = new();
         l.Name = "Tooltip";
         l.Location = buttonLocation;
@@ -211,6 +211,53 @@ partial class SudokuForm
         l.Text = "i";
         this.Controls.Add(l);
 
+        #endregion
+
+        #region Placing Generation Buttons
+        buttonLocation = new Point(575+250, 580);
+        b = new Button();
+        b.Name = "EasyGeneration";
+        b.FlatStyle = FlatStyle.Flat;
+        b.Size = new Size(125, 65);
+        b.Location = buttonLocation;
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Text = "Easy";
+        //b.Click += new EventHandler(this.SolveBoard);
+        b.MouseUp += new MouseEventHandler(this.UnfocusElement);
+        this.Controls.Add(b);
+
+        buttonLocation = new Point(710+250, 580);
+        b = new Button();
+        b.Name = "MediumGeneration";
+        b.FlatStyle = FlatStyle.Flat;
+        b.Size = new Size(125, 65);
+        b.Location = buttonLocation;
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Text = "Medium";
+        //b.Click += new EventHandler(this.SolveBoard);
+        b.MouseUp += new MouseEventHandler(this.UnfocusElement);
+        this.Controls.Add(b);
+
+        buttonLocation = new Point(710+135+250, 580);
+        b = new Button();
+        b.Name = "HardGeneration";
+        b.FlatStyle = FlatStyle.Flat;
+        b.Size = new Size(125, 65);
+        b.Location = buttonLocation;
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Text = "Hard";
+        //b.Click += new EventHandler(this.SolveBoard);
+        b.MouseUp += new MouseEventHandler(this.UnfocusElement);
+        this.Controls.Add(b);
+
+        buttonLocation = new Point(660, 597);
+        l = new();
+        l.Name = "NewPuzzle";
+        l.Location = buttonLocation;
+        l.Size = new Size(900, 65);
+        l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        l.Text = "Generate New";
+        this.Controls.Add(l);
         #endregion
 
         this.ResumeLayout(false);

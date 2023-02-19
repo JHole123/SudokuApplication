@@ -11,6 +11,7 @@ public partial class SudokuForm : Form
     private HintsHandler HintsHandler = new();
     private BoardAnalyser Analyser = new();
     private bool AutoCandidateFilling = false;
+    private Generator Generator = new();
     public SudokuForm()
     {
         InitializeComponent();
@@ -34,6 +35,7 @@ public partial class SudokuForm : Form
     public void ToggleAutoCandidateFilling(object sender, EventArgs e)
     {
         AutoCandidateFilling = !AutoCandidateFilling;
+        GenerateGraphicalCandidates();
     }
 
     private void BoardDragDrop(object sender, DragEventArgs e)
@@ -85,7 +87,7 @@ public partial class SudokuForm : Form
                 result = MainBoard.Tiles[i].Value.ToString();
                 GraphicalTiles[i].Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point);
             }
-            else
+            else if (AutoCandidateFilling)
             {
                 var candidates = MainBoard.Tiles[i].GetCandidates(ref MainBoard);
                 // this was a lot harder to do than it should have been, never forget 
@@ -170,6 +172,16 @@ public partial class SudokuForm : Form
     private void UnfocusElement(object sender, MouseEventArgs e)
     {
         ActiveControl = null;
+    }
+
+    private void GenerateBoard(object sender, EventArgs e)
+    {
+        switch ((sender as Button)!.Name)
+        {
+            case "EasyGeneration": MainBoard = Generator.GetEasyBoard(); break;
+            case "MediumGeneration": MainBoard = Generator.GetMediumBoard(); break;
+            case "HardGeneration": MainBoard = Generator.GetHardBoard(); break;
+        }
     }
 
     private string ConcatenateList(List<int> cands)

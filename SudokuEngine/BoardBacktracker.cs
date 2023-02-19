@@ -57,20 +57,22 @@ public class BoardBacktracker
         if (trialTileId == -1) return true;
 
         // update candidates on this board
-        board.UpdateSegmentValidValues();
+        //board.UpdateSegmentValidValues();
 
         // try each candidate
         for (int i = 1; i < 10; i++)
         {
-            var candidates = board.Tiles[trialTileId].GetCandidates(ref board);
-            Debug.WriteLine($"Candidates for {trialTileId}: {ConcatenateList(candidates)}");
+            //board.UpdateSegmentValidValues();
+            var candidates = ManualCheck(ref board, trialTileId);
+            //var candidates = board.Tiles[trialTileId].GetCandidates(ref board);
             if (candidates.Contains(i))
             {
+                Debug.WriteLine($"Candidates for {trialTileId}: {ConcatenateList(candidates)}");
                 board.Tiles[trialTileId].Value = i;
                 Debug.WriteLine($"Trying {i} at {trialTileId}");
                 // recurse to try every tile
                 if (SolveBoard(ref board)) return true;
-                else { board.Tiles[trialTileId].Value = 0; Debug.WriteLine("else condition reached"); }
+                board.Tiles[trialTileId].Value = 0; Debug.WriteLine("else condition reached"); 
             }
         }
         return false;
@@ -78,6 +80,41 @@ public class BoardBacktracker
 
     // candidates are empty for a tile even when there is a valid candidate
     // this only seems to be a problem if the previous tile has been edited in some way
+
+    private List<int> ManualCheck(ref Board board, int tileID)
+    {
+        List<int> candidates = new(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+        int x = tileID % 9;
+        int y = tileID / 9;
+        int z = (y / 3 * 3) + (x / 3);
+        int value;
+
+        // x check
+        for (int Y = 0; Y < 9; Y++)
+        {
+            value = board.Tiles[x + (Y * 9)].Value;
+            candidates.Remove(value);
+        }
+
+        // y check
+        for (int X = 0; X < 9; X++)
+        {
+            value = board.Tiles[X + (y * 9)].Value;
+            candidates.Remove(value);
+        }
+
+        // z check
+        for (int Y = z/9; Y < (z/9) + 3; Y++)
+        {
+            for (int X = z % 9; X < (z % 9) + 3; X++)
+            {
+                value = board.Tiles[X + (Y * 9)].Value;
+                candidates.Remove(value);
+            }
+        }
+
+        return candidates;
+    }
 
     private string ConcatenateList(List<int> t)
     {
