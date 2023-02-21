@@ -57,14 +57,15 @@ public class BoardBacktracker
         if (trialTileId == -1) return true;
 
         // update candidates on this board
-        //board.UpdateSegmentValidValues();
+        board.UpdateSegmentValidValues();
 
         // try each candidate
+        /*
         for (int i = 1; i < 10; i++)
         {
-            //board.UpdateSegmentValidValues();
-            var candidates = ManualCheck(ref board, trialTileId);
-            //var candidates = board.Tiles[trialTileId].GetCandidates(ref board);
+            board.UpdateSegmentValidValues();
+            //var candidates = ManualCheck(ref board, trialTileId);
+            var candidates = board.Tiles[trialTileId].GetCandidates(ref board);
             if (candidates.Contains(i))
             {
                 Debug.WriteLine($"Candidates for {trialTileId}: {ConcatenateList(candidates)}");
@@ -72,9 +73,23 @@ public class BoardBacktracker
                 Debug.WriteLine($"Trying {i} at {trialTileId}");
                 // recurse to try every tile
                 if (SolveBoard(ref board)) return true;
-                board.Tiles[trialTileId].Value = 0; Debug.WriteLine("else condition reached"); 
+                board.Tiles[trialTileId].Value = 0; 
+                Debug.WriteLine("else condition reached"); 
             }
         }
+        */
+
+        foreach (int i in board.Tiles[trialTileId].GetCandidates(ref board))
+        {
+            //Debug.WriteLine($"Candidates for {trialTileId}:}");
+            board.Tiles[trialTileId].Value = i;
+            //Debug.WriteLine($"Trying {i} at {trialTileId}");
+            // recurse to try every tile
+            if (SolveBoard(ref board)) return true;
+            //board.Tiles[trialTileId].Value = 0;
+            //Debug.WriteLine("else condition reached");
+        }
+
         return false;
     }
 
