@@ -37,6 +37,7 @@ public class Tile
     public List<int> GetCandidates(ref Board board)
     {
         //board.UpdateSegmentValidValues();
+        Candidates = new(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
         int[] segmentIDs = GetSegments();
         List<int> candidatesList = new();
         Segment[] segments = new Segment[] { board.Segments[segmentIDs[0]], board.Segments[segmentIDs[1]], board.Segments[segmentIDs[2]] };

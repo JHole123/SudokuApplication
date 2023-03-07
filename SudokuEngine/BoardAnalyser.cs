@@ -16,6 +16,7 @@ public class BoardAnalyser
             if (seg.FindOnlyOnceCandidate(ref board, out int tileID)) return new Move("Cross Hatch Scan", board[tileID].Value, tileID);
         }
 
+        // checking a row/column or row/row or column/column are redundant as cross hatch scanning catches this
         // Generalised Method Rule
         
 

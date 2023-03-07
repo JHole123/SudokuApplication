@@ -81,13 +81,13 @@ public class BoardBacktracker
 
         foreach (int i in board.Tiles[trialTileId].GetCandidates(ref board))
         {
-            //Debug.WriteLine($"Candidates for {trialTileId}:}");
+            //Debug.WriteLine($"Candidates for {trialTileId}:");
             board.Tiles[trialTileId].Value = i;
-            //Debug.WriteLine($"Trying {i} at {trialTileId}");
+            Debug.WriteLine($"Trying {i} at {trialTileId}");
             // recurse to try every tile
             if (SolveBoard(ref board)) return true;
-            //board.Tiles[trialTileId].Value = 0;
-            //Debug.WriteLine("else condition reached");
+            board.Tiles[trialTileId].Value = 0;
+            Debug.WriteLine("else condition reached");
         }
 
         return false;
