@@ -66,18 +66,25 @@ public partial class SudokuForm : Form
             e.Effect = DragDropEffects.None;
     }
 
-    private void GenerateGraphicalCandidates()
+    private void GenerateGraphicalCandidates(bool a = true)
     {
-        for (int j = 0; j < GraphicalTiles.Count; j++)
-        {
-            if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0]))
+        if (a) {
+            for (int j = 0; j < GraphicalTiles.Count; j++)
             {
-                MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
-                MainBoard.Tiles[j].Candidates = new();
+                if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0]))
+                {
+                    MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
+                    MainBoard.Tiles[j].Candidates = new();
+                }
+                else { 
+                    MainBoard.Tiles[j].Value = 0; 
+                    MainBoard.Tiles[j].Candidates = new List<int> { 1,2,3,4,5,6,7,8,9 };
+                }
             }
-            else { 
-                MainBoard.Tiles[j].Value = 0; 
-                MainBoard.Tiles[j].Candidates = new List<int> { 1,2,3,4,5,6,7,8,9 };
+        }
+        else {
+            for (int j = 0; j < GraphicalTiles.Count; j++) {
+                GraphicalTiles[j].Text = MainBoard.Tiles[j].Value.ToString();
             }
         }
         MainBoard.UpdateSegmentValidValues();
