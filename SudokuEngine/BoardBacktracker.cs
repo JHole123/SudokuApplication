@@ -40,7 +40,7 @@ public class BoardBacktracker
 
     public bool SolveBoard(ref Board board)
     {
-        Debug.WriteLine("SolveBoard invoked");
+        //Debug.WriteLine("SolveBoard invoked");
         int trialTileId = -1;
 
         // find empty tile
@@ -83,11 +83,11 @@ public class BoardBacktracker
         {
             //Debug.WriteLine($"Candidates for {trialTileId}:");
             board.Tiles[trialTileId].Value = i;
-            Debug.WriteLine($"Trying {i} at {trialTileId}");
+            //Debug.WriteLine($"Trying {i} at {trialTileId}");
             // recurse to try every tile
             if (SolveBoard(ref board)) return true;
             board.Tiles[trialTileId].Value = 0;
-            Debug.WriteLine("else condition reached");
+            //Debug.WriteLine("else condition reached");
         }
 
         return false;
