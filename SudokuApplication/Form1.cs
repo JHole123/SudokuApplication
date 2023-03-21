@@ -84,7 +84,8 @@ public partial class SudokuForm : Form
         }
         else {
             for (int j = 0; j < GraphicalTiles.Count; j++) {
-                GraphicalTiles[j].Text = MainBoard.Tiles[j].Value.ToString();
+                if (MainBoard[j].Value == 0) GraphicalTiles[j].Text = "";
+                else GraphicalTiles[j].Text = MainBoard.Tiles[j].Value.ToString();
             }
         }
         MainBoard.UpdateSegmentValidValues();
@@ -202,6 +203,12 @@ public partial class SudokuForm : Form
         ActiveControl = null;
     }
 
+    private void HardBoard(object sender, EventArgs e)
+    {
+        MainBoard = Generator.GetHardBoard();
+        GenerateGraphicalCandidates(false);
+    }
+
     private void GenerateBoard(object sender, EventArgs e)
     {
         switch ((sender as Button)!.Name)
@@ -210,6 +217,7 @@ public partial class SudokuForm : Form
             case "MediumGeneration": MainBoard = Generator.GetMediumBoard(); break;
             case "HardGeneration": MainBoard = Generator.GetHardBoard(); break;
         }
+        GenerateGraphicalCandidates(false);
     }
 
     private string ConcatenateList(List<int> cands)

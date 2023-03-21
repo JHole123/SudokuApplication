@@ -23,8 +23,19 @@ public class Generator
     
     public Board GetHardBoard()
     {
-        if (!Directory.Exists(GeneratorDir)) GenerateTemplates();
-        return default!;
+        Board b = GenerateTemplate();
+        PrintBoard(b);
+        List<int> TilesTaken = new();
+        int arg;
+        do
+        {
+            //Debug.WriteLine("checkmark 1");
+            arg = R.Next(0, 81);
+            b[arg].Value = 0;
+        } while (bb.SolveBoard(ref b));
+        //Debug.WriteLine("Checkmark 2");
+        //if (!Directory.Exists(GeneratorDir)) GenerateTemplates();
+        return b;
     }
 
     private void GenerateTemplates()
@@ -36,7 +47,7 @@ public class Generator
 
     }
 
-    private void GenerateTemplate()
+    private Board GenerateTemplate()
     {
         List<int> TilesFilled = new();
         Board b = new();
@@ -54,12 +65,12 @@ public class Generator
         // puts down random tiles until the board can be solved
         do
         {
-            arg =   /*GenerateRandomTile(TilesFilled);*/  RestrictedRandomNext(81, TilesFilled);
+            arg = RestrictedRandomNext(81, TilesFilled);
             TilesFilled.Add(arg);
             b.UpdateSegmentValidValues();
-            b[arg].Value =    /*GenerateRandomCandidate(b[arg].GetCandidates(ref b)); */ RestrictedRandomNext(9, b[arg].GetCandidates(ref b), false, 1);
+            b[arg].Value = RestrictedRandomNext(9, b[arg].GetCandidates(ref b), false, 1);
         } while (!bb.SolveBoard(ref b));
-        PrintBoard(b);
+        return b;
     }
 
     private int GenerateRandomCandidate(List<int> Candidates)
