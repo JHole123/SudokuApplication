@@ -97,7 +97,7 @@ public class BoardBacktracker
     // candidates are empty for a tile even when there is a valid candidate
     // this only seems to be a problem if the previous tile has been edited in some way
 
-    private List<int> ManualCheck(ref Board board, int tileID)
+    /*private List<int> ManualCheck(ref Board board, int tileID)
     {
         List<int> candidates = new(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
         int x = tileID % 9;
@@ -130,9 +130,9 @@ public class BoardBacktracker
         }
 
         return candidates;
-    }
+    }*/
 
-    private string ConcatenateList(List<int> t)
+    /*private string ConcatenateList(List<int> t)
     {
         if (t.Count == 0) return "{}";
         string arg = "{";
@@ -141,6 +141,6 @@ public class BoardBacktracker
             arg += i.ToString()+", ";
         }
         return arg[0..^2] + "}";
-    }
+    }*/
 
 }

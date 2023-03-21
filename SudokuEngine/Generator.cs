@@ -10,6 +10,7 @@ public class Generator
     private Random R = new(Guid.NewGuid().GetHashCode());
     public Board GetEasyBoard()
     {
+        GenerateTemplate();
         if (!Directory.Exists(GeneratorDir)) GenerateTemplates();
         Debug.WriteLine("T");
         return default!;
@@ -39,8 +40,46 @@ public class Generator
     {
         List<int> TilesFilled = new();
         Board b = new();
-        var arg = RestrictedRandomNext(81, TilesFilled);
-        b[arg].Value = RestrictedRandomNext(9, b[arg].Candidates, false, 1);
+        int arg;
+
+        // intitial random seeding that shouldnt be needed but apparently is
+        for (int i = 0; i < 15; i++)
+        {
+            arg =  RestrictedRandomNext(36, TilesFilled);
+            TilesFilled.Add(arg);
+            b.UpdateSegmentValidValues();
+            b[arg].Value =  RestrictedRandomNext(9, b[arg].GetCandidates(ref b), false, 1);
+        }
+
+        // puts down random tiles until the board can be solved
+        do
+        {
+            arg =   /*GenerateRandomTile(TilesFilled);*/  RestrictedRandomNext(81, TilesFilled);
+            TilesFilled.Add(arg);
+            b.UpdateSegmentValidValues();
+            b[arg].Value =    /*GenerateRandomCandidate(b[arg].GetCandidates(ref b)); */ RestrictedRandomNext(9, b[arg].GetCandidates(ref b), false, 1);
+        } while (!bb.SolveBoard(ref b));
+        PrintBoard(b);
+    }
+
+    private int GenerateRandomCandidate(List<int> Candidates)
+    {
+        int arg;
+        do
+        {
+            arg = R.Next(1, 10);
+        } while (Candidates.Contains(arg));
+        return arg;
+    }
+
+    private int GenerateRandomTile(List<int> TilesFilled)
+    {
+        int arg;
+        do
+        {
+            arg = R.Next(0, 81);
+        } while (TilesFilled.Contains(arg));
+        return arg;
     }
 
     // generates a random number from the set [0,n) ^ RestrictionSet
@@ -51,10 +90,18 @@ public class Generator
         var arg = R.Next(0+offset, ExclusiveMax+offset);
         while (RestrictionSet.Contains(arg) == SetIsRestrictive)
         {
-            arg = (arg++ % ExclusiveMax) +offset;
+            arg = R.Next(0 + offset, ExclusiveMax + offset);
         }
         return arg;
     }
-    // FIX:: loops infinitely causing program freeze in certain situations
+
+    private void PrintBoard(Board board)
+    {
+        for (int i = 0; i < 81; i++)
+        {
+            if (i + 1 %9 == 0) Debug.WriteLine($"{board.Tiles[i].Value}");
+            else Debug.Write($"{board.Tiles[i].Value} ");
+        }
+    }
 }
 

@@ -178,7 +178,7 @@ public partial class SudokuForm : Form
         {
             Debug.WriteLine($"{t.Value} ");
         }
-        GenerateGraphicalCandidates();
+        GenerateGraphicalCandidates(false);
     }
 
     private void NotesButtonPressed(object sender, EventArgs e)
