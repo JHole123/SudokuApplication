@@ -81,6 +81,7 @@ public class BoardBacktracker
 
         foreach (int i in board.Tiles[trialTileId].GetCandidates(ref board))
         {
+            // debug lines are really slow so commented out for running
             //Debug.WriteLine($"Candidates for {trialTileId}:");
             board.Tiles[trialTileId].Value = i;
             //Debug.WriteLine($"Trying {i} at {trialTileId}");

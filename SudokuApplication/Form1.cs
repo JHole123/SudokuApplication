@@ -12,6 +12,8 @@ public partial class SudokuForm : Form
     private BoardAnalyser Analyser = new();
     private bool AutoCandidateFilling = false;
     private Generator Generator = new();
+    private Stopwatch sw = new();
+    private bool Notes = false;
     public SudokuForm()
     {
         InitializeComponent();
@@ -41,7 +43,8 @@ public partial class SudokuForm : Form
     private void BoardDragDrop(object sender, DragEventArgs e)
     {
         string data = string.Join("", File.ReadAllLines(((string[])e.Data!.GetData(DataFormats.FileDrop))[0]));
-        if (!data.Any(x => char.IsLetter(x) && char.IsSymbol(x)) && data.Length == 81) // check the board is all numbers and 81 long
+        if (!data.Any(x => char.IsLetter(x) && char.IsSymbol(x)) && data.Length == 81) 
+            // check the board is all numbers and 81 long
         {
             for (int j = 0; j < 81; j++)
             {
@@ -63,18 +66,25 @@ public partial class SudokuForm : Form
             e.Effect = DragDropEffects.None;
     }
 
-    private void GenerateGraphicalCandidates()
+    private void GenerateGraphicalCandidates(bool a = true)
     {
-        for (int j = 0; j < GraphicalTiles.Count; j++)
-        {
-            if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0]))
+        if (a) {
+            for (int j = 0; j < GraphicalTiles.Count; j++)
             {
-                MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
-                MainBoard.Tiles[j].Candidates = new();
+                if (GraphicalTiles[j].Text.Length == 1 && char.IsNumber(GraphicalTiles[j].Text[0]))
+                {
+                    MainBoard.Tiles[j].Value = int.Parse(GraphicalTiles[j].Text);
+                    MainBoard.Tiles[j].Candidates = new();
+                }
+                else { 
+                    MainBoard.Tiles[j].Value = 0; 
+                    MainBoard.Tiles[j].Candidates = new List<int> { 1,2,3,4,5,6,7,8,9 };
+                }
             }
-            else { 
-                MainBoard.Tiles[j].Value = 0; 
-                MainBoard.Tiles[j].Candidates = new List<int> { 1,2,3,4,5,6,7,8,9 };
+        }
+        else {
+            for (int j = 0; j < GraphicalTiles.Count; j++) {
+                GraphicalTiles[j].Text = MainBoard.Tiles[j].Value.ToString();
             }
         }
         MainBoard.UpdateSegmentValidValues();
@@ -160,13 +170,31 @@ public partial class SudokuForm : Form
     private void SolveBoard(object sender, EventArgs e)
     {
         Debug.WriteLine("SolveBoard ran");
+        sw = Stopwatch.StartNew();
         if (new BoardBacktracker().SolveBoard(ref MainBoard)) Debug.WriteLine("Board is solved");
-        Debug.WriteLine("BoardBacktracker.SolveBoard ran");
+        sw.Stop();
+        Debug.WriteLine($"{(sw.ElapsedTicks * 1000) / Stopwatch.Frequency}us");
         foreach (Tile t in MainBoard.Tiles)
         {
             Debug.WriteLine($"{t.Value} ");
         }
         GenerateGraphicalCandidates();
+    }
+
+    private void NotesButtonPressed(object sender, EventArgs e)
+    {
+        Debug.WriteLine(@$"{Directory.GetCurrentDirectory()}..\..\..\..\SudokuEngine\GenTemplates\");
+        var arg = sender as Button;
+        if (Notes)
+        {
+            arg!.BackColor = Color.DarkSlateGray;
+            Notes = !Notes;
+        }
+        else
+        {
+            arg!.BackColor = Color.LightSkyBlue;
+            Notes = !Notes;
+        }
     }
 
     private void UnfocusElement(object sender, MouseEventArgs e)

@@ -136,7 +136,7 @@ partial class SudokuForm
         t.MaximumSize = new Size(600, 0);
         t.AutoSize = true;
         t.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-        t.Text = "Hint Title";
+        t.Text = "";
         this.Controls.Add(t);
         #endregion
 
@@ -160,7 +160,7 @@ partial class SudokuForm
         l.MaximumSize = new Size(600, 0);
         l.AutoSize = true;
         l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-        l.Text = "This is some example text of a hint if you do it long enough does it go off the screen or does it wrap";
+        l.Text = "";
         this.Controls.Add(l);
         #endregion
 
@@ -258,6 +258,22 @@ partial class SudokuForm
         l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         l.Text = "Generate New";
         this.Controls.Add(l);
+        #endregion
+
+        #region Placing Notes button
+
+        buttonLocation = new Point(350, 575);
+        b = new Button();
+        b.Name = "NotesButton";
+        b.FlatStyle = FlatStyle.Flat;
+        b.Size = new Size(150, 75);
+        b.Location = buttonLocation;
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Text = "Notes";
+        b.Click += new EventHandler(this.NotesButtonPressed);
+        b.MouseUp += new MouseEventHandler(this.UnfocusElement);
+        this.Controls.Add(b);
+
         #endregion
 
         this.ResumeLayout(false);
