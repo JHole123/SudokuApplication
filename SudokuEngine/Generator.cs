@@ -24,6 +24,25 @@ public class Generator
     public Board GetHardBoard()
     {
         Board b = GenerateTemplate();
+        Board c = b;
+        List<int> TilesTaken = new();
+        int arg, valueRemoved;
+        // when bb.SolveBoard(ref c) is run, c becomes fully solved
+        // therefore it is necessary to allow c to be a copy of b, so that c will be solved but b will not be
+        // otherwise b would just continuously take tiles, check if it can be solved (and solving it in the process), and then take another first tile
+        while (bb.SolveBoard(ref c)) {
+            arg = RestrictedRandomNext(81, TilesTaken);
+            valueRemoved = b[arg].Value;
+            b[arg].Value = 0;
+            TilesTaken.Add(arg);
+            c = b;
+        }
+        
+        // when the loop finished, it has taken enough squares to not allow solving. add the last one in so it *is* solvable
+        b[arg].Value = valueRemoved;
+        
+        
+        /*Board b = GenerateTemplate();
         PrintBoard(b);
         List<int> TilesTaken = new();
         int arg;
@@ -34,7 +53,7 @@ public class Generator
             b[arg].Value = 0;
         } while (bb.SolveBoard(ref b));
         //Debug.WriteLine("Checkmark 2");
-        //if (!Directory.Exists(GeneratorDir)) GenerateTemplates();
+        //if (!Directory.Exists(GeneratorDir)) GenerateTemplates();*/
         return b;
     }
 
