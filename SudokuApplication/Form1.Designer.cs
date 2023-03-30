@@ -246,7 +246,7 @@ partial class SudokuForm
         b.Location = buttonLocation;
         b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         b.Text = "Hard";
-        b.Click += new EventHandler(this.HardBoard);
+        b.Click += new EventHandler(this.GenerateBoard);
         b.MouseUp += new MouseEventHandler(this.UnfocusElement);
         this.Controls.Add(b);
 

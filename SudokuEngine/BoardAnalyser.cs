@@ -1,7 +1,23 @@
-﻿namespace SudokuEngine;
+﻿using System.Diagnostics;
+
+namespace SudokuEngine;
 
 public class BoardAnalyser
 {
+    public bool SolveBoard(Board board)
+    {
+        Move m;
+        while (board.IsNotComplete())
+        {
+            Debug.WriteLine("in while loop");
+            m = GetMove(ref board);
+            Debug.WriteLine("got move");
+            if (m.Reason == "No Analytical Move") return false;
+            board[m.TileID].Value = m.NewValue;
+        }
+        return true;
+    }
+
     public Move GetMove(ref Board board)
     {
         // Checks if any tile has a sole candidate; that tile can be filled

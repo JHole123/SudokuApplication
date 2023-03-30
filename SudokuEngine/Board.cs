@@ -10,6 +10,14 @@ public class Board
         PopulateSegmentTileIDs();
 
     }
+    public bool IsNotComplete()
+    {
+        foreach (Tile t in Tiles)
+        {
+            if (t.Value != 0) return true;
+        }
+        return false;
+    }
     public Tile this[int n]
     {
         get { return Tiles[n]; }

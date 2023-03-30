@@ -38,7 +38,7 @@ public class BoardBacktracker
         return false;
     }*/
 
-    public bool SolveBoard(ref Board board)
+    public bool SolveBoard(Board board)
     {
         //Debug.WriteLine("SolveBoard invoked");
         int trialTileId = -1;
@@ -86,7 +86,7 @@ public class BoardBacktracker
             board.Tiles[trialTileId].Value = i;
             //Debug.WriteLine($"Trying {i} at {trialTileId}");
             // recurse to try every tile
-            if (SolveBoard(ref board)) return true;
+            if (SolveBoard(board)) return true;
             board.Tiles[trialTileId].Value = 0;
             //Debug.WriteLine("else condition reached");
         }

@@ -117,6 +117,7 @@ public partial class SudokuForm : Form
                         else result += $"  ";
                     }
                 }
+                GraphicalTiles[i].Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold, GraphicsUnit.Point);
             }
             GraphicalTiles[i].Text = result;
             result = "";
@@ -172,7 +173,7 @@ public partial class SudokuForm : Form
     {
         Debug.WriteLine("SolveBoard ran");
         sw = Stopwatch.StartNew();
-        if (new BoardBacktracker().SolveBoard(ref MainBoard)) Debug.WriteLine("Board is solved");
+        if (new BoardBacktracker().SolveBoard(MainBoard)) Debug.WriteLine("Board is solved");
         sw.Stop();
         Debug.WriteLine($"{(sw.ElapsedTicks * 1000) / Stopwatch.Frequency}us");
         foreach (Tile t in MainBoard.Tiles)
@@ -201,12 +202,6 @@ public partial class SudokuForm : Form
     private void UnfocusElement(object sender, MouseEventArgs e)
     {
         ActiveControl = null;
-    }
-
-    private void HardBoard(object sender, EventArgs e)
-    {
-        MainBoard = Generator.GetHardBoard();
-        GenerateGraphicalCandidates(false);
     }
 
     private void GenerateBoard(object sender, EventArgs e)
