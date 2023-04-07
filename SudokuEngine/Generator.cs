@@ -22,23 +22,40 @@ public class Generator
         return b;
     }*/
 
-    public Board GetEasyBoard()
+    public Board GetBoard(int difficulty)
     {
         Board b = GenerateTemplate();
-        Board c = b;
+        List<int> TilesTaken = new();
+        int arg, valueRemoved;
+        for (int i = 0; i < difficulty; i++)
+        {
+            arg = RestrictedRandomNext(81, TilesTaken);
+            valueRemoved = b[arg].Value;
+            b[arg].Value = 0;
+            Board c = b;
+            if (ba.GetMove(ref b).Reason == "No Analytical Reason")
+            {
+                b[arg].Value = valueRemoved;
+                continue;
+            }
+            TilesTaken.Add(arg);
+        }
+        return b;
+    }
+
+    /*public Board GetEasyBoard()
+    {
+        Board b = GenerateTemplate();
         List<int> TilesTaken = new();
         int arg, valueRemoved;
         for (int i = 0; i < 30; i++)
         {
-            Debug.WriteLine("Main loop");
             arg = RestrictedRandomNext(81, TilesTaken);
             valueRemoved = b[arg].Value;
             b[arg].Value = 0;
-            c = b;
-            Debug.WriteLine("SolveBoard");
-            if (!ba.SolveBoard(c))
+            Board c = b;
+            if (ba.GetMove(ref b).Reason == "No Analytical Reason")
             {
-                Debug.WriteLine("In if");
                 b[arg].Value = valueRemoved;
                 continue;
             }
@@ -57,7 +74,7 @@ public class Generator
             arg = RestrictedRandomNext(81, TilesTaken);
             valueRemoved = b[arg].Value;
             b[arg].Value = 0;
-            if (!ba.SolveBoard(b))
+            if (ba.GetMove(ref b).Reason == "No Analytical Reason")
             {
                 b[arg].Value = valueRemoved;
                 continue;
@@ -81,7 +98,24 @@ public class Generator
         }
         b[arg].Value = valueRemoved;
         return b;
-    }
+
+        Board b = GenerateTemplate();
+        List<int> TilesTaken = new();
+        int arg, valueRemoved;
+        for (int i = 0; i < 60; i++)
+        {
+            arg = RestrictedRandomNext(81, TilesTaken);
+            valueRemoved = b[arg].Value;
+            b[arg].Value = 0;
+            if (ba.GetMove(ref b).Reason == "No Analytical Reason")
+            {
+                b[arg].Value = valueRemoved;
+                continue;
+            }
+            TilesTaken.Add(arg);
+        }
+        return b;
+    } */
 
     private Board GenerateTemplate()
     {

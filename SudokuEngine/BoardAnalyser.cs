@@ -4,19 +4,20 @@ namespace SudokuEngine;
 
 public class BoardAnalyser
 {
-    public bool SolveBoard(Board board)
+    /*public bool SolveBoard(Board board)
     {
         Move m;
         while (board.IsNotComplete())
         {
             Debug.WriteLine("in while loop");
             m = GetMove(ref board);
-            Debug.WriteLine("got move");
+            Debug.WriteLine($"move: {m.Reason}");
             if (m.Reason == "No Analytical Move") return false;
+            //else return true;
             board[m.TileID].Value = m.NewValue;
         }
         return true;
-    }
+    }*/
 
     public Move GetMove(ref Board board)
     {

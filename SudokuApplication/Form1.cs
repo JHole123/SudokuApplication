@@ -208,9 +208,9 @@ public partial class SudokuForm : Form
     {
         switch ((sender as Button)!.Name)
         {
-            case "EasyGeneration": MainBoard = Generator.GetEasyBoard(); break;
-            case "MediumGeneration": MainBoard = Generator.GetMediumBoard(); break;
-            case "HardGeneration": MainBoard = Generator.GetHardBoard(); break;
+            case "EasyGeneration": MainBoard = Generator.GetBoard(30); break;
+            case "MediumGeneration": MainBoard = Generator.GetBoard(45); break;
+            case "HardGeneration": MainBoard = Generator.GetBoard(60); break;
         }
         GenerateGraphicalCandidates(false);
     }
