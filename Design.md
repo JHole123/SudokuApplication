@@ -35,3 +35,17 @@ As the sudoku library is intended to be a standalone feature, i.e. usable by oth
 
 - List of tiles (0-based; across then down)
 - List of segments (27 long in standard sudoku; 9 rows, 9 columns, 9 blocks)
+
+
+## Backtracking Algorithm
+
+One of the more complicated algorithms in the program is the backtracking algorithm. This is used to fully solve an unsolved sudoku board in a bruteforce manner. This algorithm is very important for the generation of sudoku puzzles. The algorithm is in the form of a "recursive depth-first tree traversal". It will put down the first tile it can immediately, then again, again etc. until it cannot go any longer. It will then reverse one square and try the second tile, and so forth. This means it goes as deep as it can, then begins to add some breadth to its search. 
+
+This algorithm has a lot of ways in which it can be optimised. For example, making the algorithm fill in the tiles with the least candidates first will overall reduce the processing time, as it means less branches at the beginning (which are more significant than having less branches near the end of the tree). The use of analytical solving for very simplistic cases, such as there only being one candidate in any given tile, is also much faster than backtracking. This can be ran first to significantly speed up the backtracking process (as it reduces the number of tiles, which is the exponential factor in the time it takes to solve a board)
+
+## Generation Algorithm
+
+Another algorithm employed is one used to generate the sudoku puzzles themselves. These are generated with varying difficulty. This process begins by generating a completed sudoku puzzle, which is done by placing down random valid tiles in random spots on a board, and then using the backtracker to check if they can be solved. When the backtracker solves them, the function GenerateTemplate() returns this full board. The function GetBoard() then takes this full board, and completes the following process: remove a random tile from the board, check that it is still *analytically* solvable. If it isn't, then replace the tile. This process is repeated more times for higher difficulty settings.
+
+The RestrictedRandomNext function is strange. This is an algorithm that works similarly to Random.Next, but only takes an upper limit instead of both lower and upper limits. However, it takes a set of numbers which are the only numbers it can choose from: for example, an upper limit of 10 but having a restriction set of {4,6,7,11} will lead it to produce a random number from the set {4,6,7}. The SetIsRestrictive bool allows the function to instead treat the RestrictionSet as the ones that *aren't* allowed. In this case, the previous example would generate the numbers {0,1,2,3,5,8,9}. The offset simply allows the function to be offset by a certain amount, increasing both 0 and the ExclusiveMax.
+
