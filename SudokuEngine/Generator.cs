@@ -124,8 +124,9 @@ public class Generator
         int arg;
 
         // intitial random seeding that shouldnt be needed but apparently is
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 10; i++)
         {
+            Debug.WriteLine("checkpoint 1");
             arg =  RestrictedRandomNext(36, TilesFilled);
             TilesFilled.Add(arg);
             b.UpdateSegmentValidValues();
