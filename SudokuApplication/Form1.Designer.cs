@@ -28,7 +28,6 @@ partial class SudokuForm
     ///  Required method for Designer support - do not modify
     ///  the contents of this method with the code editor.
     /// </summary>
-    // i EDITED IT MWAHAHAH
     private void InitializeComponent()
     {
 
@@ -75,19 +74,6 @@ partial class SudokuForm
             }
         }
         #endregion
-
-        /*#region Placing Drag & Drop Label
-        Point dragAndDropLabelLocation = new Point(800, 100);
-        Label l = new();
-        l.Text = "Drag and drop your *.txt files here";
-        l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-        l.Location = dragAndDropLabelLocation;
-        l.Size = new System.Drawing.Size(500, 50);
-        l.AllowDrop = true;
-        l.DragEnter += new System.Windows.Forms.DragEventHandler(this.BoardDragEnter);
-        l.DragDrop += new System.Windows.Forms.DragEventHandler(this.BoardDragDrop);
-        this.Controls.Add(l);
-        #endregion*/
 
         #region Placing Picture Box
         Point dragAndDropIconLocation = new Point(600, 50);
@@ -258,22 +244,6 @@ partial class SudokuForm
         l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         l.Text = "Generate New";
         this.Controls.Add(l);
-        #endregion
-
-        #region Placing Notes button
-
-        buttonLocation = new Point(350, 575);
-        b = new Button();
-        b.Name = "NotesButton";
-        b.FlatStyle = FlatStyle.Flat;
-        b.Size = new Size(150, 75);
-        b.Location = buttonLocation;
-        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-        b.Text = "Notes";
-        b.Click += new EventHandler(this.NotesButtonPressed);
-        b.MouseUp += new MouseEventHandler(this.UnfocusElement);
-        this.Controls.Add(b);
-
         #endregion
 
         this.ResumeLayout(false);

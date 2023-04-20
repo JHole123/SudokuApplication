@@ -13,7 +13,6 @@ public partial class SudokuForm : Form
     private bool AutoCandidateFilling = false;
     private Generator Generator = new();
     private Stopwatch sw = new();
-    private bool Notes = false;
     public SudokuForm()
     {
         InitializeComponent();
@@ -181,22 +180,6 @@ public partial class SudokuForm : Form
             Debug.WriteLine($"{t.Value} ");
         }
         GenerateGraphicalCandidates(false);
-    }
-
-    private void NotesButtonPressed(object sender, EventArgs e)
-    {
-        Debug.WriteLine(@$"{Directory.GetCurrentDirectory()}..\..\..\..\SudokuEngine\GenTemplates\");
-        var arg = sender as Button;
-        if (Notes)
-        {
-            arg!.BackColor = Color.DarkSlateGray;
-            Notes = !Notes;
-        }
-        else
-        {
-            arg!.BackColor = Color.LightSkyBlue;
-            Notes = !Notes;
-        }
     }
 
     private void UnfocusElement(object sender, MouseEventArgs e)
