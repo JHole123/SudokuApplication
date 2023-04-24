@@ -28,3 +28,22 @@ The project fulfils all of its main requirements, however after programming the 
 
 ### Bruteforce Solving Requirements
 
+- **The bruteforce solution must use heuristics for optimisation.** As talked about in the overview, this requirement turned out to be completely redundant. The backtracker was sufficiently fast even for use by the generator (which requires several backtracks to be run) without any sort of optimisation. The methods described in the analysis to optimise the bruteforce method remain, but they were not implemented.
+
+- **The bruteforce solution must use memory stores for optimisation.** This was something that was implemented. The sudoku board is organised with specific data structures for the segments (rows, columns, 3x3 chunks) and these contain the overall candidates for each segment. This makes memory access faster - although, it was not necessary for this project. It was implemented in the original construction of the solution, and not as an added part like the heuristic optimisation would be, so the decision to not include it was not one that could have been feasibly taken.
+
+### Board Generation Requirements
+
+- **The generation will save patterns to generate sudokus.** As with many other requirements listed on the analysis page, this was not necessary. The generator is very fast to work even with several backtracking calls. It does not need to generate templates in order to have fast response times for the user, the generation is more or less instant. This requirement was not implemented.
+
+- **The generation will have variance for difficulties.** This is something that was implemented in the main project. There are difficulties easy, normal, and hard. Easy has 30 removal passes, normal has 45, and hard has 60. 
+
+### GUI Requirements
+
+- **The grid can take manual input of values.** This was something that was, obviously, implemented. A user simply needs to press a tile and then a number to input a number.
+
+- **The grid can take mass input of values.** This is a feature that was implemented. It takes the input in the form of a *.txt file that has rows separated by new lines and otherwise has 9 numbers with no spaces. It uses 0 to represent an empty tile.
+
+- **Allow drag-and-drop of files into the sudoku grid.** This was a feature that was implemented early on. It is the main mechanism that facilitates the mass input of values outlined in the previous requirement. A user can simply drag and drop the *.txt file in to make it appear in the grid.
+
+- **Modern looking UI design layout.** This was not achieved. Using windows forms for a project like this was a mistake, as it has minimal UI options for anything other than basic forms.
