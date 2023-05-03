@@ -46,6 +46,18 @@ GenerateGraphicalCandidates had programming to allow users to add values to the 
 
 ### Board Generation bug
 
+Commit dc8308b, March 27th 2023
+
+GetBoard() would call the function GenerateTemplate() to create a completed board, and then prune as many numbers as was appropriate for that difficulty. However, it would check that the board will still solvable by calling Backtracker.SolveBoard(ref board), which would result in the board being checked for completion to be filled back up. It would cause freezes in the program as it would continuously remove one number, then check that it's solved - which fills it back up, and this loops infinitely. This bug was fixed by having a temporary board variable.
+
 ### Generation Solvability bug
 
+Commit a23ee4a, March 30th 2023
+
+Allowing the *backtracker* to check whether a puzzle was still solvable was a mistake. This is because, working back from a completed board, a backtracker will always be able to solve it, even if the board is empty backtracking will be able to find a solution. Changing the check to use the board analyser fixed this mistake; only boards that are *human-solvable* are allowed through.
+
 ### Board Generation bug #2
+
+Commit 9ebc6d8, April 18th 2023
+
+When creating the initial seeding for a board template, the seeding was sometimes too aggressive in trying to randomise the numbers. This meant that is often caused the program to freeze. The value for seeding was lowered, which stopped this issue.
