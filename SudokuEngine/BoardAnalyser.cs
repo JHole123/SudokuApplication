@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace SudokuEngine;
+﻿namespace SudokuEngine;
 
 public class BoardAnalyser
 {
@@ -15,7 +13,8 @@ public class BoardAnalyser
         // Cross Hatch Scanning
         foreach (Segment seg in board.Segments)
         {
-            if (seg.FindOnlyOnceCandidate(ref board, out int tileID)) return new Move("Cross Hatch Scan", board[tileID].Value, tileID);
+            if (seg.FindOnlyOnceCandidate(ref board, out int tileID)) 
+                return new Move("Cross Hatch Scan", board[tileID].Value, tileID);
         }
 
         // if no move is found, return that no move is found

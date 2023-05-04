@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace SudokuEngine;
+﻿namespace SudokuEngine;
 
 public class Generator
 {
@@ -41,7 +39,6 @@ public class Generator
         // intitial random seeding
         for (int i = 0; i < 10; i++)
         {
-            Debug.WriteLine("checkpoint 1");
             arg =  RestrictedRandomNext(36, TilesFilled);
             TilesFilled.Add(arg);
             b.UpdateSegmentValidValues();
@@ -62,7 +59,8 @@ public class Generator
     // generates a random number from the set [0,n) ^ RestrictionSet
     // !SetIsRestrictive -> generates random number from set [0,n) ^ !RestrictionSet
     // offset applies to the set [0,n) to [0+offset,n+offset)
-    private int RestrictedRandomNext(int ExclusiveMax, IEnumerable<int> RestrictionSet, bool SetIsRestrictive = true, int offset = 0)
+    private int RestrictedRandomNext(int ExclusiveMax, IEnumerable<int> RestrictionSet, 
+        bool SetIsRestrictive = true, int offset = 0)
     {
         var arg = R.Next(0+offset, ExclusiveMax+offset);
         while (RestrictionSet.Contains(arg) == SetIsRestrictive)

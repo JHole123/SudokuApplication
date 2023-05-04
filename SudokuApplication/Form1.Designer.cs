@@ -1,33 +1,20 @@
-﻿using System;
-
-namespace SudokuApplication;
+﻿namespace SudokuApplication;
 
 partial class SudokuForm
 {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
     private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing && (components != null))
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            components.Dispose();
         }
+        base.Dispose(disposing);
+    }
 
     #region Windows Form Designer generated code
 
-    /// <summary>
-    ///  Required method for Designer support - do not modify
-    ///  the contents of this method with the code editor.
-    /// </summary>
     private void InitializeComponent()
     {
 
@@ -50,10 +37,12 @@ partial class SudokuForm
             {
                 tb = new();
                 tb.Cursor = System.Windows.Forms.Cursors.Hand;
-                tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+                tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, 
+                    System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
                 tb.Size = new System.Drawing.Size(50, 50);
                 X = sudokuBoardLocation.X + ((x - 1) * (tb.Size.Width + sudokuTileMargin));
-                Y = sudokuBoardLocation.Y + ((y - 1) * (50 + sudokuTileMargin)); // height is hardcoded tb.Size.Height doesn't work
+                // height is hardcoded tb.Size.Height doesn't work
+                Y = sudokuBoardLocation.Y + ((y - 1) * (50 + sudokuTileMargin)); 
                 if (x > 3) X += sudokuTileMargin;
                 if (x > 6) X += sudokuTileMargin;
                 if (y > 3) Y += sudokuTileMargin;
@@ -95,7 +84,8 @@ partial class SudokuForm
         b.FlatStyle = FlatStyle.Flat;
         b.Size = new Size(145, 60);
         b.Location = buttonLocation;
-        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, 
+            System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         b.Text = "Show hint";
         b.Click += new EventHandler(this.GenerateHint);
         b.MouseUp += new MouseEventHandler(this.UnfocusElement);
@@ -107,7 +97,8 @@ partial class SudokuForm
         b.FlatStyle = FlatStyle.Flat;
         b.Size = new Size(145, 60);
         b.Location = buttonLocation;
-        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, 
+            System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         b.Text = "Hide hint";
         b.Click += new EventHandler(this.HideHint);
         b.MouseUp += new MouseEventHandler(this.UnfocusElement);
@@ -121,7 +112,8 @@ partial class SudokuForm
         t.Location = hintTitleLabelLocation;
         t.MaximumSize = new Size(600, 0);
         t.AutoSize = true;
-        t.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        t.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, 
+            System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         t.Text = "";
         this.Controls.Add(t);
         #endregion
@@ -133,7 +125,8 @@ partial class SudokuForm
         c.Location = hintTallyLabelLocation;
         c.MaximumSize = new Size(600, 0);
         c.AutoSize = true;
-        c.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        c.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, 
+            System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         c.Text = "Hints generated: 0";
         this.Controls.Add(c);
         #endregion
@@ -145,7 +138,8 @@ partial class SudokuForm
         l.Location = hintLabelLocation;
         l.MaximumSize = new Size(600, 0);
         l.AutoSize = true;
-        l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, 
+            System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         l.Text = "";
         this.Controls.Add(l);
         #endregion
@@ -157,7 +151,8 @@ partial class SudokuForm
         b.FlatStyle = FlatStyle.Flat;
         b.Size = new Size(150, 75);
         b.Location = buttonLocation;
-        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        b.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, 
+            System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         b.Text = "Solve";
         b.Click += new EventHandler(this.SolveBoard);
         b.MouseUp += new MouseEventHandler(this.UnfocusElement);
@@ -170,7 +165,8 @@ partial class SudokuForm
         l.Name = "AutoCandidateLabel";
         l.Location = buttonLocation;
         l.AutoSize= true;
-        l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        l.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, 
+            System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         l.Text = "Auto Candidate Filling";
         this.Controls.Add(l);
         #endregion
@@ -249,7 +245,5 @@ partial class SudokuForm
         this.ResumeLayout(false);
         this.PerformLayout();
     }
-
-
-    }
-#endregion
+    #endregion
+}

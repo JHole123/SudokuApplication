@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace SudokuEngine;
+﻿namespace SudokuEngine;
 
 public class Tile
 {
@@ -10,7 +8,6 @@ public class Tile
     public Tile(int tileID)
     {
         TileID = tileID;
-        //Value = 0;
     }
     public int this[int n]
     {
@@ -22,9 +19,14 @@ public class Tile
     {
         int x = TileID % 9;
         int y = TileID / 9;
-        int z = (y / 3 * 3) + (x / 3); // it rounds down to the nearest n since it is integer division (divides then rounds down)
-                                       // this maths finds the "anchor point" of a 3x3 segment in the top left of the segment
-        return new int[] { x, y+9, z + 18 }; // within Segments list: horizontal segments indices [0,8]; vertical [9,17]; 3x3 [18,26] therefore offsets of 0, 9, 18
+
+        // it rounds down to the nearest n since it is integer division (divides then rounds down)
+        // this maths finds the "anchor point" of a 3x3 segment in the top left of the segment
+        int z = (y / 3 * 3) + (x / 3);
+
+        // within Segments list: horizontal segments indices [0,8]; vertical [9,17];
+        // 3x3 [18,26] therefore offsets of 0, 9, 18
+        return new int[] { x, y+9, z + 18 }; 
     }
 
     // prunes candidates list for any it can, then returns the candidate list
@@ -33,7 +35,8 @@ public class Tile
         Candidates = new(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
         int[] segmentIDs = GetSegments();
         List<int> candidatesList = new();
-        Segment[] segments = new Segment[] { board.Segments[segmentIDs[0]], board.Segments[segmentIDs[1]], board.Segments[segmentIDs[2]] };
+        Segment[] segments = new Segment[] 
+        { board.Segments[segmentIDs[0]], board.Segments[segmentIDs[1]], board.Segments[segmentIDs[2]] };
         foreach (Segment sgmnt in segments)
         {
             foreach (int i in Candidates)

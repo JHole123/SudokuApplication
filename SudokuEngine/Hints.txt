@@ -1,1 +1,3 @@
 ﻿Sole Candidate:On your board, there is at least one tile with only one candidate. This means the value of that tile must be equal to the candidate. This is the simplest form of finding a new value.
+No Analytical Move:On your board, there are no moves that could be reasonably found using analysis.
+Cross Hatch Scan:On your board, in a given segment there is only one candidate. Trying looking in your rows, columns, and 3x3 chunks for where a given candidate only appears once.

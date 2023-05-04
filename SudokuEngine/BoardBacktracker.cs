@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace SudokuEngine;
+﻿namespace SudokuEngine;
 
 public class BoardBacktracker
 {

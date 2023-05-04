@@ -31,7 +31,9 @@ public partial class SudokuForm : Form
         tt.InitialDelay = 500;
         tt.ReshowDelay = 1500;
 
-        tt.SetToolTip(Controls["Tooltip"], "Automatic candidate filling means the computer will automatically fill in\nwhich numbers are possible based on whether those numbers are\nin the same row, column, or 3x3 square.");
+        tt.SetToolTip(Controls["Tooltip"], "Automatic candidate filling means the computer will " +
+        "automatically fill in\nwhich numbers are possible based on whether those numbers are\n" +
+        "in the same row, column, or 3x3 square.");
     }
 
     public void ToggleAutoCandidateFilling(object sender, EventArgs e)
@@ -67,7 +69,7 @@ public partial class SudokuForm : Form
     }
 
     // pushes the data in the sudoku grid to the internal representation, for analysis or calculation
-    // if a is false, then the dataflow is reversed; the data in the internal representation is pushed to the sudoku grid
+    // if a is false, then the dataflow is reversed; the internal data is pushed to the sudoku grid
     private void GenerateGraphicalCandidates(bool a = true)
     {
         if (a) {
@@ -91,7 +93,6 @@ public partial class SudokuForm : Form
             }
         }
         MainBoard.UpdateSegmentValidValues();
-        //string arg;
         string result = "";
         for (int i = 0; i < 81; i++)
         {
@@ -103,8 +104,7 @@ public partial class SudokuForm : Form
             else if (AutoCandidateFilling)
             {
                 var candidates = MainBoard.Tiles[i].GetCandidates(ref MainBoard);
-                // this was a lot harder to do than it should have been, never forget 
-                for (int j = 1; j < 10; j++) // i'm so sorry
+                for (int j = 1; j < 10; j++) 
                 {
                     if (candidates.Contains(j))
                     {
