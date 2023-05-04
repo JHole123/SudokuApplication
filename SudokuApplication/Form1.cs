@@ -23,6 +23,7 @@ public partial class SudokuForm : Form
         GenerateGraphicalCandidates();
     }
 
+    // tooltip config
     private void FormLoad(object sender, EventArgs e)
     {
         ToolTip tt = new();
@@ -65,6 +66,8 @@ public partial class SudokuForm : Form
             e.Effect = DragDropEffects.None;
     }
 
+    // pushes the data in the sudoku grid to the internal representation, for analysis or calculation
+    // if a is false, then the dataflow is reversed; the data in the internal representation is pushed to the sudoku grid
     private void GenerateGraphicalCandidates(bool a = true)
     {
         if (a) {
@@ -170,18 +173,14 @@ public partial class SudokuForm : Form
 
     private void SolveBoard(object sender, EventArgs e)
     {
-        Debug.WriteLine("SolveBoard ran");
         sw = Stopwatch.StartNew();
-        if (new BoardBacktracker().SolveBoard(MainBoard)) Debug.WriteLine("Board is solved");
+        new BoardBacktracker().SolveBoard(MainBoard);
         sw.Stop();
         Debug.WriteLine($"{(sw.ElapsedTicks * 1000) / Stopwatch.Frequency}us");
-        foreach (Tile t in MainBoard.Tiles)
-        {
-            Debug.WriteLine($"{t.Value} ");
-        }
         GenerateGraphicalCandidates(false);
     }
 
+    // stops elements getting highlighted after a user clicks them
     private void UnfocusElement(object sender, MouseEventArgs e)
     {
         ActiveControl = null;
@@ -196,15 +195,5 @@ public partial class SudokuForm : Form
             case "HardGeneration": MainBoard = Generator.GetBoard(60); break;
         }
         GenerateGraphicalCandidates(false);
-    }
-
-    private string ConcatenateList(List<int> cands)
-    {
-        string result = "";
-        foreach (int i in cands)
-        {
-            result += $"{i} ";
-        }
-        return result;
     }
 }

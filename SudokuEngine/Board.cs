@@ -8,7 +8,6 @@ public class Board
     {
         for (int i = 0; i < 81; i++) Tiles.Add(new(i));
         PopulateSegmentTileIDs();
-
     }
     public bool IsNotComplete()
     {
@@ -38,10 +37,6 @@ public class Board
             for (int j = 8; j>=0; j--) sgmnt.Tiles.Add((j * 9) + i); // Horizontal segments beginning at top
             Segments.Add(sgmnt);
             sgmnt = new();
-
-            /*for (int j = 0; j < 9; j++) sgmnt.Tiles.Add((j * 9) + i); // Vertical segments beginning at left
-            Segments.Add(sgmnt);
-            sgmnt = new();*/
         }
         for (int i = 0; i < 9; i++)
         {
